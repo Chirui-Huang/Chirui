@@ -57,6 +57,14 @@ $(document).ready(function () {
 
         var matches = findMatches(index, query).slice(0, 8);
         renderMatches(matches, query);
+
+        if (window.siteTrackEvent) {
+          window.siteTrackEvent('search_query', {
+            query_length: query.length,
+            result_count: matches.length,
+            page_path: window.location.pathname
+          });
+        }
       }, 120));
 
       searchInput.addEventListener('keydown', function (event) {
@@ -167,6 +175,19 @@ $(document).ready(function () {
       }).join('');
 
       resultsContainer.innerHTML = html;
+
+      var resultLinks = resultsContainer.querySelectorAll('.c-search-results-list__link');
+      Array.prototype.forEach.call(resultLinks, function (link, index) {
+        link.addEventListener('click', function () {
+          if (window.siteTrackEvent) {
+            window.siteTrackEvent('search_result_click', {
+              result_rank: index + 1,
+              target_path: link.getAttribute('href') || '',
+              page_path: window.location.pathname
+            });
+          }
+        });
+      });
     }
 
     function buildSnippet(item, bestField, bestIndex) {
