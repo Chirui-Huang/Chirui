@@ -123,6 +123,15 @@ bundle exec jekyll serve --port 4001 --config _config.yml,_config_dev.yml
 2. Restart Jekyll server
 3. Confirm you edited files in this repo path: `/Users/cheerie/Documents/GitHub/Chirui`
 
+## Donate
+
+If you’d like to support my work, you can donate via:
+
+- PayPal
+- Zelle
+
+Contact: `saygoodnight88@gmail.com`
+
 ## Security Notes
 
 - Do not commit secrets or private credentials.
