@@ -178,7 +178,7 @@ Change the color values to customize your site's appearance.
 
 ## 💝 Support My Work
 
-💚 **Chirui Huang** • 💳 saygoodnight88@gmail.com
+💚 **Chirui Huang** • 💳 saygoodnight88@gmail.com (PayPal & Zelle)
 
 ---
 
