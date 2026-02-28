@@ -301,11 +301,11 @@ title: "Admin Analytics Dashboard"
     </form>
     <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e8ead8;">
       <p style="font-size: 13px; color: #757575; text-align: center; margin: 10px 0;">
-        <strong>First time?</strong> Set your password in the browser console:
+        <strong>Authorized Access Only</strong>
       </p>
-      <code style="display: block; background: #f5f5f5; padding: 10px; border-radius: 4px; font-size: 12px; text-align: center;">
-        localStorage.setItem('admin_password_hash', btoa('YourPassword'))
-      </code>
+      <p style="font-size: 12px; color: #a0a0a0; text-align: center; margin: 5px 0;">
+        Contact the website administrator if you need access.
+      </p>
     </div>
   </div>
 </div>
@@ -441,27 +441,25 @@ function sendToServer(data) {
 
 <script>
 // Admin authentication
-var ADMIN_PASSWORD_KEY = 'admin_password_hash';
+// Pre-configured password: ChiriuiAnalytics88
+var ADMIN_PASSWORD_HASH = 'Q2hpcml1aUFuYWx5dGljczg4';
 var SESSION_KEY = 'admin_session';
+var SESSION_TIMEOUT = 3600000; // 1 hour in milliseconds
 
 function handleLogin(event) {
   event.preventDefault();
   var password = document.getElementById('admin-password').value;
-  var storedHash = localStorage.getItem(ADMIN_PASSWORD_KEY);
   
-  // If no password set, set the first one entered
-  if (!storedHash) {
-    localStorage.setItem(ADMIN_PASSWORD_KEY, btoa(password));
-    showDashboard();
-    return;
-  }
-  
-  // Check password
-  if (btoa(password) === storedHash) {
+  // Check against pre-configured password
+  if (btoa(password) === ADMIN_PASSWORD_HASH) {
+    var loginTime = new Date().getTime();
     sessionStorage.setItem(SESSION_KEY, 'authenticated');
+    sessionStorage.setItem('login_time', loginTime);
     showDashboard();
   } else {
     document.getElementById('error-msg').style.display = 'block';
+    // Clear the password field
+    document.getElementById('admin-password').value = '';
   }
 }
 
@@ -477,8 +475,18 @@ function showDashboard() {
 }
 
 function checkAuthentication() {
-  if (sessionStorage.getItem(SESSION_KEY) === 'authenticated') {
+  var isAuthenticated = sessionStorage.getItem(SESSION_KEY) === 'authenticated';
+  var loginTime = parseInt(sessionStorage.getItem('login_time') || '0');
+  var currentTime = new Date().getTime();
+  
+  // Check if session has expired
+  if (isAuthenticated && (currentTime - loginTime < SESSION_TIMEOUT)) {
     showDashboard();
+  } else if (isAuthenticated) {
+    // Session expired
+    sessionStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem('login_time');
+    alert('Session expired. Please login again.');
   }
 }
 
