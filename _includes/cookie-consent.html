@@ -55,7 +55,7 @@
     </div>
     <div class="cookie-modal-footer">
       <button id="cookie-save-settings" class="cookie-btn cookie-btn-accept">Save Settings</button>
-      <button id="cookie-view-data" class="cookie-btn cookie-btn-info">View My Data</button>
+      <button id="cookie-view-data" class="cookie-btn cookie-btn-info" style="display: none;">View My Data</button>
       <button id="cookie-delete-data" class="cookie-btn cookie-btn-decline">Delete My Data</button>
     </div>
   </div>
@@ -476,6 +476,12 @@ input:checked + .cookie-slider:before {
 (function() {
   'use strict';
 
+  // Configuration
+  var config = {
+    showDataViewer: false, // Set to true to allow visitors to view their data
+    adminOnly: true // Only show data viewer to admin
+  };
+
   // Wait for DOM and dependencies to load
   function init() {
     if (typeof CookieManager === 'undefined' || typeof ActivityTracker === 'undefined') {
@@ -601,6 +607,17 @@ input:checked + .cookie-slider:before {
       if (analyticsToggle) {
         analyticsToggle.checked = ActivityTracker.isEnabled();
       }
+      
+      // Show/hide data viewer button based on config and admin status
+      var viewDataBtn = document.getElementById('cookie-view-data');
+      if (viewDataBtn) {
+        var isAdmin = checkAdminStatus();
+        if (config.showDataViewer || (config.adminOnly && isAdmin)) {
+          viewDataBtn.style.display = 'inline-block';
+        } else {
+          viewDataBtn.style.display = 'none';
+        }
+      }
     }
   }
 
@@ -618,6 +635,12 @@ input:checked + .cookie-slider:before {
   function hideAllModals() {
     document.getElementById('cookie-settings-modal').style.display = 'none';
     document.getElementById('cookie-data-modal').style.display = 'none';
+  }
+
+  function checkAdminStatus() {
+    // Check if user is authenticated as admin
+    // This checks for admin session from the admin dashboard
+    return sessionStorage.getItem('admin_session') === 'authenticated';
   }
 
   // Initialize when DOM is ready
