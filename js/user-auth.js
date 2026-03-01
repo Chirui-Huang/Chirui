@@ -5,7 +5,8 @@
 
 class UserAuth {
   constructor(baseUrl) {
-    this.baseUrl = baseUrl || 'http://127.0.0.1:8090';
+    // Use provided baseUrl, or window.POCKETBASE_URL, or fallback to localhost
+    this.baseUrl = baseUrl || window.POCKETBASE_URL || 'http://127.0.0.1:8090';
     this.authToken = this.getStoredToken();
     this.currentUser = this.getStoredUser();
   }

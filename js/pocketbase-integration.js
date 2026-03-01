@@ -1,7 +1,10 @@
 // PocketBase Integration for Chirui Huang's Website
 // This file handles all PocketBase API interactions
 
-const PB_URL = 'http://127.0.0.1:8090';
+// PocketBase URL - use environment variable or default to localhost for development
+// For production: Set window.POCKETBASE_URL in your HTML before loading this script
+// Example: <script>window.POCKETBASE_URL = 'https://yourapp.pockethost.io';</script>
+const PB_URL = window.POCKETBASE_URL || 'http://127.0.0.1:8090';
 
 // Initialize PocketBase client
 class PocketBaseClient {
