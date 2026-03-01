@@ -351,6 +351,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Comment form submission
   const commentForm = document.getElementById('comment-form');
   if (commentForm) {
+    const formAction = (commentForm.getAttribute('action') || '').toLowerCase();
+    if (formAction.includes('formspree.io')) {
+      console.log('Guest book configured for Formspree; skipping PocketBase comment handler.');
+      return;
+    }
+
     commentForm.addEventListener('submit', async function(event) {
       event.preventDefault();
       
