@@ -2,7 +2,7 @@
   <!-- Comment Form -->
   <div style="background: #f9f9f9; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
     <form id="comment-form" action="https://formspree.io/f/xnjbylgn" method="POST">
-      <input type="hidden" name="_subject" value="New Comment on Your Website!" />
+      <input type="hidden" name="_subject" value="New Guest Book Entry!" />
       <input type="hidden" name="_next" value="https://fredykraft.github.io/Chirui/?comment=success" />
       <input type="hidden" name="_template" value="box" />
       
@@ -37,19 +37,20 @@
       </div>
 
       <div style="margin-bottom: 20px;">
-        <label for="comment-content" style="display: block; margin-bottom: 8px; color: #555; font-weight: 600;">Comment *</label>
+        <label for="comment-content" style="display: block; margin-bottom: 8px; color: #555; font-weight: 600;">Your Message *</label>
         <textarea 
           id="comment-content" 
-          name="content" 
+          name="message" 
           rows="5" 
           required 
           minlength="10"
           maxlength="1000"
+          placeholder="Leave your message here..."
           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; resize: vertical; transition: border-color 0.3s; font-family: inherit;"
           onfocus="this.style.borderColor='#FFB6C1'"
           onblur="this.style.borderColor='#e0e0e0'"
         ></textarea>
-        <small style="color: #888; font-size: 12px;">10-1000 characters. All submissions are moderated.</small>
+        <small style="color: #888; font-size: 12px;">10-1000 characters. Share your thoughts, questions, or just say hello!</small>
       </div>
 
       <button 
@@ -59,9 +60,9 @@
         onmouseover="this.style.background='#ff9db3'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255,182,193,0.4)'"
         onmouseout="this.style.background='#FFB6C1'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(255,182,193,0.3)'"
       >
-        Send Comment
+        Sign Guest Book
       </button>
-      <p style="margin-top: 15px; font-size: 14px; color: #888;">Your comment will be sent directly to my email inbox.</p>
+      <p style="margin-top: 15px; font-size: 14px; color: #888;">Your message will be sent directly to me. Thank you for visiting!</p>
     </form>
     <div id="comment-status" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none;"></div>
   </div>
@@ -76,7 +77,7 @@ if (window.location.search.includes('comment=success')) {
     statusDiv.style.background = '#d4edda';
     statusDiv.style.color = '#155724';
     statusDiv.style.border = '1px solid #c3e6cb';
-    statusDiv.innerHTML = '✓ Thank you! Your comment has been sent successfully.';
+    statusDiv.innerHTML = '✓ Thank you for signing my guest book! Your message has been sent successfully.';
     // Clear the form
     document.getElementById('comment-form').reset();
     // Remove the success parameter from URL
