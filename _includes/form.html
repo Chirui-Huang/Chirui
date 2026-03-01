@@ -4,20 +4,22 @@
       <div class="c-form__title">Contact</div>
     <div class="c-form__group">
       <label for="form-name">Your Name (Required)</label>
-      <input class="c-form__input" id="form-name" type="text" name="name" required>
+      <input class="c-form__input" id="form-name" type="text" name="name" required maxlength="50" pattern="[a-zA-Z\s\-']{2,50}" title="Letters, spaces, hyphens, and apostrophes only (2-50 characters)">
     </div>
     <div class="c-form__group">
       <label for="form-email">Your Email (Required)</label>
-      <input class="c-form__input" id="form-email" type="email" name="_replyto" required>
+      <input class="c-form__input" id="form-email" type="email" name="_replyto" required maxlength="254">
     </div>
     <div class="c-form__group">
       <label for="form-subject">Subject</label>
-      <input class="c-form__input" id="form-subject" type="text" name="_subject">
+      <input class="c-form__input" id="form-subject" type="text" name="_subject" maxlength="200">
     </div>
     <div class="c-form__group">
       <label for="form-text">Your Message (Required)</label>
-      <textarea class="c-form__input" id="form-text" name="text" rows="10" required></textarea>
+      <textarea class="c-form__input" id="form-text" name="text" rows="10" required minlength="10" maxlength="2000"></textarea>
     </div>
+    <!-- Honeypot for spam protection -->
+    <input type="text" id="website" name="website" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="c-form__group">
       <button class="c-btn c-btn--secondary c-btn--big c-btn--shadow" type="submit">Send</button>
     </div>

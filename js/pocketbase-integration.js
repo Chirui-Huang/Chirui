@@ -64,11 +64,50 @@ async function handleContactForm(event) {
   const subjectField = form.querySelector('#form-subject, #contact-subject');
   const messageField = form.querySelector('#form-text, #contact-message');
   
+  // Check honeypot (if exists)
+  const honeypot = form.querySelector('#website');
+  if (honeypot && honeypot.value !== '') {
+    console.log('Spam detected');
+    return false;
+  }
+  
+  // Rate limiting - 5 submissions per 5 minutes
+  const rateCheck = window.RateLimiter.check('contact_form', 5, 5 * 60 * 1000);
+  if (!rateCheck.allowed) {
+    alert(rateCheck.message);
+    return false;
+  }
+  
+  // Get and sanitize values
+  const name = window.sanitizeInput(nameField ? nameField.value : '');
+  const email = window.sanitizeInput(emailField ? emailField.value : '');
+  const subject = window.sanitizeInput(subjectField ? subjectField.value : '');
+  const message = window.sanitizeInput(messageField ? messageField.value : '');
+  
+  // Validate inputs
+  if (!window.validateName(name)) {
+    alert('Please enter a valid name (2-50 characters, letters only)');
+    nameField.focus();
+    return false;
+  }
+  
+  if (!window.validateEmail(email)) {
+    alert('Please enter a valid email address');
+    emailField.focus();
+    return false;
+  }
+  
+  if (!window.validateText(message, 10, 2000)) {
+    alert('Message must be between 10 and 2000 characters');
+    messageField.focus();
+    return false;
+  }
+  
   const formData = {
-    name: nameField ? nameField.value : '',
-    email: emailField ? emailField.value : '',
-    subject: subjectField ? subjectField.value : '',
-    message: messageField ? messageField.value : '',
+    name: name,
+    email: email,
+    subject: subject,
+    message: message,
     submitted_at: new Date().toISOString()
   };
 
@@ -114,9 +153,25 @@ async function handleNewsletterSubscribe(event) {
   const submitButton = form.querySelector('input[type="submit"]');
   const emailInput = form.querySelector('#mce-EMAIL');
   const originalButtonValue = submitButton.value;
+  
+  // Rate limiting - 3 subscriptions per 10 minutes
+  const rateCheck = window.RateLimiter.check('newsletter_form', 3, 10 * 60 * 1000);
+  if (!rateCheck.allowed) {
+    alert(rateCheck.message);
+    return false;
+  }
+  
+  // Sanitize and validate email
+  const email = window.sanitizeInput(emailInput.value);
+  
+  if (!window.validateEmail(email)) {
+    alert('Please enter a valid email address');
+    emailInput.focus();
+    return false;
+  }
 
   const subscriptionData = {
-    email: emailInput.value,
+    email: email,
     subscribed_at: new Date().toISOString(),
     status: 'active'
   };
@@ -258,11 +313,42 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const submitButton = this.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
+      
+      // Rate limiting - 3 comments per 30 minutes
+      const rateCheck = window.RateLimiter.check('comment_form', 3, 30 * 60 * 1000);
+      if (!rateCheck.allowed) {
+        alert(rateCheck.message);
+        return false;
+      }
+      
+      // Get and sanitize inputs
+      const name = window.sanitizeInput(this.querySelector('#comment-name').value);
+      const email = window.sanitizeInput(this.querySelector('#comment-email').value);
+      const content = window.sanitizeInput(this.querySelector('#comment-content').value);
+      
+      // Validate inputs
+      if (!window.validateName(name)) {
+        alert('Please enter a valid name (2-50 characters, letters only)');
+        this.querySelector('#comment-name').focus();
+        return false;
+      }
+      
+      if (!window.validateEmail(email)) {
+        alert('Please enter a valid email address');
+        this.querySelector('#comment-email').focus();
+        return false;
+      }
+      
+      if (!window.validateText(content, 10, 1000)) {
+        alert('Comment must be between 10 and 1000 characters');
+        this.querySelector('#comment-content').focus();
+        return false;
+      }
 
       const commentData = {
-        author_name: this.querySelector('#comment-name').value,
-        author_email: this.querySelector('#comment-email').value,
-        content: this.querySelector('#comment-content').value
+        author_name: name,
+        author_email: email,
+        content: content
       };
 
       try {

@@ -17,6 +17,9 @@
           id="comment-name" 
           name="name" 
           required 
+          maxlength="50"
+          pattern="[a-zA-Z\s\-']{2,50}"
+          title="Letters, spaces, hyphens, and apostrophes only (2-50 characters)"
           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;"
           onfocus="this.style.borderColor='#FFB6C1'"
           onblur="this.style.borderColor='#e0e0e0'"
@@ -30,6 +33,7 @@
           id="comment-email" 
           name="email" 
           required 
+          maxlength="254"
           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;"
           onfocus="this.style.borderColor='#FFB6C1'"
           onblur="this.style.borderColor='#e0e0e0'"
@@ -43,10 +47,13 @@
           name="content" 
           rows="5" 
           required 
+          minlength="10"
+          maxlength="1000"
           style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; resize: vertical; transition: border-color 0.3s; font-family: inherit;"
           onfocus="this.style.borderColor='#FFB6C1'"
           onblur="this.style.borderColor='#e0e0e0'"
         ></textarea>
+        <small style="color: #888; font-size: 12px;">10-1000 characters. All submissions are moderated.</small>
       </div>
 
       <button 
