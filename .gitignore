@@ -8,6 +8,7 @@ _config_dev.yml
 # Sensitive files - DO NOT COMMIT
 ADMIN_PASSWORD.md
 ADMIN_ANALYTICS_GUIDE.md
+admin-analytics.html
 _config.local.yml
 SECURITY_SETUP.md
 SECURITY_ACTION_REQUIRED.md

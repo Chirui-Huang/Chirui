@@ -1,0 +1,344 @@
+---
+layout: default
+title: "Smart Features Demo"
+---
+
+<style>
+  .demo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .demo-section {
+    margin: 60px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  [data-theme="dark"] .demo-section {
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+  }
+  
+  .demo-title {
+    font-size: 32px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  [data-theme="dark"] .demo-title {
+    color: #e0e0e0;
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  [data-theme="dark"] .feature-card {
+    background: #2C3E50;
+  }
+  
+  .feature-card h2 {
+    color: #4CAF50;
+    margin-top: 0;
+  }
+  
+  .feature-card h3 {
+    color: #667eea;
+    margin-top: 25px;
+  }
+  
+  .feature-card h4 {
+    color: #764ba2;
+    margin-top: 20px;
+  }
+  
+  .feature-demo {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border-left: 4px solid #4CAF50;
+  }
+  
+  [data-theme="dark"] .feature-demo {
+    background: #34495E;
+  }
+  
+  .cta-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .cta-box h2 {
+    color: white;
+    margin-top: 0;
+  }
+  
+  code.inline-code {
+    background: #e8f5e9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    color: #2e7d32;
+    font-size: 0.9em;
+  }
+  
+  [data-theme="dark"] code.inline-code {
+    background: #1b5e20;
+    color: #a5d6a7;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px;
+  }
+</style>
+
+<article class="demo-container">
+  <h1 class="demo-title">🚀 Smart Features Demo</h1>
+  
+  <div class="cta-box">
+    <h2>✨ Welcome to the Smart Website!</h2>
+    <p style="font-size: 18px; margin: 15px 0;">This page demonstrates all the intelligent features that make this website modern and user-friendly. Scroll down to explore each feature!</p>
+    <p style="margin-top: 20px;">
+      <span class="badge">Reading Progress Bar</span>
+      <span class="badge">Dark Mode</span>
+      <span class="badge">Keyboard Shortcuts</span>
+      <span class="badge">Smart Navigation</span>
+    </p>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>📊 Reading Progress Bar</h2>
+      <p><strong>Look at the top of your screen!</strong> You'll see a colorful gradient bar that shows your reading progress.</p>
+      
+      <div class="feature-demo">
+        <strong>How it works:</strong>
+        <ul>
+          <li>Automatically tracks your scroll position</li>
+          <li>Shows percentage of page scrolled</li>
+          <li>Beautiful animated gradient effect</li>
+          <li>Works on all pages</li>
+        </ul>
+      </div>
+      
+      <p><em>Try scrolling up and down to see it in action!</em></p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>🌓 Dark Mode Toggle</h2>
+      <p><strong>Look at the bottom right corner!</strong> You'll see a sun/moon button.</p>
+      
+      <div class="feature-demo">
+        <strong>Features:</strong>
+        <ul>
+          <li>One-click dark/light mode switching</li>
+          <li>Saves your preference automatically</li>
+          <li>Smooth color transitions</li>
+          <li>Eye-friendly for night reading</li>
+        </ul>
+      </div>
+      
+      <p><strong>👉 Try it now!</strong> Click the button in the bottom right corner to switch themes.</p>
+      <p>Your preference is saved, so the next time you visit, your chosen theme will be active.</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>⌨️ Keyboard Shortcuts</h2>
+      <p>Power users rejoice! Navigate faster with keyboard shortcuts.</p>
+      
+      <div class="feature-demo">
+        <strong>Available shortcuts:</strong>
+        <ul>
+          <li><code class="inline-code">/</code> - Focus the search bar</li>
+          <li><code class="inline-code">h</code> - Go to home page</li>
+          <li><code class="inline-code">t</code> - Scroll to top</li>
+          <li><code class="inline-code">b</code> - Scroll to bottom</li>
+          <li><code class="inline-code">d</code> - Toggle dark mode</li>
+          <li><code class="inline-code">?</code> - Show/hide shortcuts help</li>
+        </ul>
+      </div>
+      
+      <p><strong>👉 Press <code class="inline-code">?</code> key right now</strong> to see a beautiful modal with all shortcuts!</p>
+      <p><em>Note: Shortcuts don't work when you're typing in input fields.</em></p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>⏱️ Reading Time Estimator</h2>
+      <p>This feature automatically calculates how long it will take to read an article.</p>
+      
+      <div class="feature-demo">
+        <strong>How it calculates:</strong>
+        <ul>
+          <li>Counts all words in the article</li>
+          <li>Uses average reading speed (200 words/min)</li>
+          <li>Only shows for articles with 200+ words</li>
+          <li>Displayed in a beautiful gradient badge</li>
+        </ul>
+      </div>
+      
+      <p>This article is long enough, so you should see a reading time badge at the top!</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>📑 Auto Table of Contents</h2>
+      <p>For longer articles with multiple sections, a table of contents is automatically generated.</p>
+      
+      <h3>This is a Sample H3 Heading</h3>
+      <p>The table of contents feature detects all H2, H3, and H4 headings in your article.</p>
+      
+      <h3>Another Sample Section</h3>
+      <p>Each heading becomes a clickable link in the TOC. When you click, it smoothly scrolls to that section.</p>
+      
+      <h4>Sample H4 Subsection</h4>
+      <p>H4 headings are indented in the TOC to show hierarchy.</p>
+      
+      <div class="feature-demo">
+        <strong>Smart features:</strong>
+        <ul>
+          <li>Auto-generates unique IDs for headings</li>
+          <li>Smooth scroll to sections</li>
+          <li>Highlights current section while scrolling</li>
+          <li>Shows hierarchical structure</li>
+          <li>Only appears for articles with 3+ headings</li>
+        </ul>
+      </div>
+      
+      <p>You should see a TOC box near the top of this page!</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>📋 Copy Code Button</h2>
+      <p>Any code block on the site now has a convenient copy button.</p>
+      
+      <div class="feature-demo">
+        <p><strong>Example code block:</strong></p>
+        <pre><code>function greet(name) {
+  console.log(`Hello, ${name}!`);
+  return `Welcome to the smart website!`;
+}
+
+// Try hovering over this code block
+greet('Developer');</code></pre>
+      </div>
+      
+      <p><strong>👉 Hover over the code above</strong> - you'll see a "Copy" button appear in the top right!</p>
+      <p>Click it to copy the code to your clipboard. You'll get visual feedback when copied.</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>🎯 Enhanced Scroll to Top</h2>
+      <p>The scroll-to-top button now has a circular progress indicator!</p>
+      
+      <div class="feature-demo">
+        <strong>Features:</strong>
+        <ul>
+          <li>Circular gradient shows scroll progress</li>
+          <li>Only appears after scrolling 300px</li>
+          <li>Smooth animations and hover effects</li>
+          <li>One-click return to top</li>
+        </ul>
+      </div>
+      
+      <p><strong>👉 Scroll down more</strong> and look at the bottom right corner to see it!</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>🔗 Smart External Links</h2>
+      <p>All external links are automatically enhanced for better UX and security.</p>
+      
+      <div class="feature-demo">
+        <p><strong>Example external links:</strong></p>
+        <ul>
+          <li><a href="https://github.com">GitHub</a> - Opens in new tab</li>
+          <li><a href="https://google.com">Google</a> - Opens in new tab</li>
+          <li><a href="https://stackoverflow.com">Stack Overflow</a> - With security attributes</li>
+        </ul>
+      </div>
+      
+      <p>External links automatically get:</p>
+      <ul>
+        <li><code class="inline-code">target="_blank"</code> to open in a new tab</li>
+        <li><code class="inline-code">rel="noopener noreferrer"</code> for security</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <div class="feature-card">
+      <h2>✨ More Smart Features</h2>
+      
+      <h3>🖼️ Lazy Loading Images</h3>
+      <p>Images load only when they're about to enter the viewport, with smooth fade-in animations. This improves page load speed significantly!</p>
+      
+      <h3>🎨 Smooth Scrolling</h3>
+      <p>All internal anchor links use smooth scrolling. Try clicking on the table of contents links!</p>
+      
+      <h3>📱 Fully Responsive</h3>
+      <p>All features work perfectly on mobile, tablet, and desktop devices.</p>
+      
+      <h3>♿ Accessibility First</h3>
+      <p>Features respect <code class="inline-code">prefers-reduced-motion</code>, have proper focus states, and work with keyboard navigation.</p>
+      
+      <h4>Performance Optimized</h4>
+      <p>All features are lightweight (~20KB total) with no external dependencies.</p>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>🎉 That's All!</h2>
+    <p style="font-size: 18px;">You've explored all the smart features. These enhancements work automatically across the entire website!</p>
+    <p style="margin-top: 20px;">
+      <strong>Quick Test:</strong> Press <code class="inline-code" style="background: rgba(255,255,255,0.3); color: white;">t</code> to scroll to top, or <code class="inline-code" style="background: rgba(255,255,255,0.3); color: white;">?</code> to see all shortcuts!
+    </p>
+  </div>
+
+  <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+    <div style="text-align: center;">
+      <h2>Keep Scrolling!</h2>
+      <p>Watch the progress bar and scroll-to-top button</p>
+      <p style="font-size: 48px; margin: 20px 0;">↓</p>
+    </div>
+  </div>
+
+  <div style="margin: 60px 0; padding: 40px; background: white; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+    <h2 style="color: #4CAF50;">🚀 Enjoy Your Smart Website!</h2>
+    <p style="font-size: 18px; color: #666;">All these features make your website more modern, user-friendly, and professional.</p>
+    <p style="margin-top: 20px;">
+      <a href="/" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">← Back to Home</a>
+    </p>
+  </div>
+</article>

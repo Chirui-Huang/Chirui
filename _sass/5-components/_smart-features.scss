@@ -1,0 +1,603 @@
+/**
+ * Smart Features Styles
+ * Modern styling for interactive features
+ */
+
+/* ============================================
+   1. READING PROGRESS BAR
+   ============================================ */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.reading-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  transition: width 0.1s ease-out;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   2. DARK MODE TOGGLE
+   ============================================ */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode-toggle:active {
+  transform: scale(0.95);
+}
+
+.dark-mode-toggle .sun-icon,
+.dark-mode-toggle .moon-icon {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle .sun-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  color: #FDB813;
+}
+
+.dark-mode-toggle .moon-icon {
+  opacity: 0;
+  transform: scale(0) rotate(180deg);
+  color: #5D6D7E;
+}
+
+[data-theme="dark"] .dark-mode-toggle {
+  background: #2C3E50;
+  border-color: #34495E;
+}
+
+[data-theme="dark"] .dark-mode-toggle .sun-icon {
+  opacity: 0;
+  transform: scale(0) rotate(-180deg);
+}
+
+[data-theme="dark"] .dark-mode-toggle .moon-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  color: #F39C12;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .c-header {
+  background-color: #2C3E50;
+  border-bottom-color: #34495E;
+}
+
+[data-theme="dark"] .c-nav__item a {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .c-nav__item.is-active a,
+[data-theme="dark"] .c-nav__item a:hover {
+  color: #4CAF50;
+}
+
+[data-theme="dark"] .c-search__text {
+  background-color: #34495E;
+  color: #e0e0e0;
+  border-color: #4A5F7F;
+}
+
+[data-theme="dark"] .c-search__text::placeholder {
+  color: #95a5a6;
+}
+
+[data-theme="dark"] .c-search-results-list {
+  background-color: #2C3E50;
+  border-color: #34495E;
+}
+
+[data-theme="dark"] .c-search-results-list__link:hover {
+  background-color: #34495E;
+}
+
+[data-theme="dark"] pre,
+[data-theme="dark"] code {
+  background-color: #2C3E50;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] a {
+  color: #64B5F6;
+}
+
+[data-theme="dark"] a:hover {
+  color: #90CAF9;
+}
+
+/* ============================================
+   3. READING TIME INDICATOR
+   ============================================ */
+.reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0;
+  animation: fadeInUp 0.6s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.reading-time svg {
+  flex-shrink: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   4. KEYBOARD SHORTCUTS MODAL
+   ============================================ */
+.shortcuts-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shortcuts-modal.active {
+  opacity: 1;
+}
+
+.shortcuts-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shortcuts-modal.active .shortcuts-content {
+  transform: scale(1);
+}
+
+[data-theme="dark"] .shortcuts-content {
+  background: #2C3E50;
+  color: #e0e0e0;
+}
+
+.shortcuts-content h3 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+[data-theme="dark"] .shortcuts-content h3 {
+  color: #e0e0e0;
+}
+
+.shortcuts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.shortcuts-list li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+[data-theme="dark"] .shortcuts-list li {
+  border-bottom-color: #34495E;
+}
+
+.shortcuts-list li:last-child {
+  border-bottom: none;
+}
+
+.shortcuts-list kbd {
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #495057;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 32px;
+  text-align: center;
+  display: inline-block;
+}
+
+[data-theme="dark"] .shortcuts-list kbd {
+  background: linear-gradient(180deg, #34495E 0%, #2C3E50 100%);
+  border-color: #4A5F7F;
+  color: #e0e0e0;
+}
+
+.shortcuts-close {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shortcuts-close:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.shortcuts-close:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   5. TABLE OF CONTENTS
+   ============================================ */
+.table-of-contents {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-left: 4px solid #4CAF50;
+  padding: 20px 25px;
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  animation: slideInLeft 0.6s ease;
+}
+
+[data-theme="dark"] .table-of-contents {
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+  border-left-color: #4CAF50;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.table-of-contents h4 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #2C3E50;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .table-of-contents h4 {
+  color: #e0e0e0;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.toc-item a {
+  color: #34495E;
+  text-decoration: none;
+  display: block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 20px;
+}
+
+[data-theme="dark"] .toc-item a {
+  color: #bdc3c7;
+}
+
+.toc-item a:before {
+  content: '▸';
+  position: absolute;
+  left: 6px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toc-item a:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #4CAF50;
+  transform: translateX(5px);
+}
+
+[data-theme="dark"] .toc-item a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #4CAF50;
+}
+
+.toc-item a:hover:before {
+  opacity: 1;
+}
+
+.toc-item.active a {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.toc-item.active a:before {
+  opacity: 1;
+  color: #4CAF50;
+}
+
+.toc-h3 {
+  padding-left: 15px;
+}
+
+.toc-h4 {
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+/* ============================================
+   6. COPY CODE BUTTON
+   ============================================ */
+.code-block-wrapper {
+  position: relative;
+  margin: 20px 0;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+[data-theme="dark"] .copy-code-btn {
+  background: rgba(44, 62, 80, 0.95);
+  border-color: #4A5F7F;
+  color: #e0e0e0;
+}
+
+.copy-code-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .copy-code-btn:hover {
+  background: #34495E;
+}
+
+.copy-code-btn.copied {
+  background: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.copy-code-btn svg {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   7. ENHANCED SCROLL TO TOP
+   ============================================ */
+.c-top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 998;
+}
+
+.c-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.c-top:hover {
+  transform: scale(1.1) translateY(-3px);
+}
+
+.scroll-progress-circle {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#4CAF50 0deg, rgba(255,255,255,0.1) 0deg);
+  transition: background 0.1s ease;
+  z-index: -1;
+}
+
+/* ============================================
+   8. LAZY LOADING IMAGES
+   ============================================ */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* ============================================
+   9. RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    bottom: 70px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .c-top {
+    bottom: 15px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .scroll-progress-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .shortcuts-content {
+    padding: 25px;
+  }
+
+  .table-of-contents {
+    padding: 15px 20px;
+    margin: 20px 0;
+  }
+
+  .toc-h3 {
+    padding-left: 10px;
+  }
+
+  .toc-h4 {
+    padding-left: 20px;
+  }
+
+  .reading-time {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* ============================================
+   11. ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.dark-mode-toggle:focus,
+.copy-code-btn:focus,
+.shortcuts-close:focus,
+.c-top:focus {
+  outline: 3px solid #4CAF50;
+  outline-offset: 3px;
+}
+
+/* ============================================
+   12. SMOOTH TRANSITIONS
+   ============================================ */
+* {
+  scroll-behavior: smooth;
+}
+
+body,
+.c-header,
+.c-nav__item a,
+a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
