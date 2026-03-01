@@ -16,3 +16,21 @@ p code,
 li code {
   padding: 3px 5px;
 }
+
+/* Responsive Code */
+@media only screen and (max-width: 640px) {
+  code {
+    font-size: 13px;
+  }
+  
+  p code,
+  li code {
+    padding: 2px 4px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  code {
+    font-size: 12px;
+  }
+}

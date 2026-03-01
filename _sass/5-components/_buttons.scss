@@ -56,3 +56,22 @@
     transform: translateY(2px);
   }
 }
+
+/* Responsive Buttons */
+@media only screen and (max-width: 640px) {
+  .c-btn {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .c-btn {
+    font-size: 11px;
+    padding: 6px 10px;
+    
+    &--middle {
+      width: 100%;
+    }
+  }
+}

@@ -11,3 +11,18 @@ pre {
   word-break: break-all;
   font-family: Courier, monospace;
 }
+
+/* Responsive Pre */
+@media only screen and (max-width: 640px) {
+  pre {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  pre {
+    padding: 12px;
+    font-size: 12px;
+  }
+}

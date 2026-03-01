@@ -13,3 +13,30 @@ blockquote {
     padding: 10px;
   }
 }
+
+/* Responsive Blockquote */
+@media only screen and (max-width: 900px) {
+  blockquote {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  blockquote {
+    font-size: 16px;
+    padding-left: 12px;
+    p {
+      padding: 8px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  blockquote {
+    font-size: 15px;
+    padding-left: 10px;
+    p {
+      padding: 6px;
+    }
+  }
+}
