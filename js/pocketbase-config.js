@@ -1,20 +1,12 @@
 /**
  * PocketBase Configuration
  * 
- * INSTRUCTIONS FOR DEPLOYMENT:
+ * Production URL: https://chirui-huang.pockethost.io/
+ * This enables forms to work on the public GitHub Pages website.
  * 
- * 1. When deploying PocketBase to production (e.g., PocketHost):
- *    - Uncomment the line below
- *    - Replace 'YOUR-POCKETBASE-URL' with your actual PocketBase URL
- * 
- * 2. For local development:
- *    - Keep this commented (uses http://127.0.0.1:8090 by default)
- * 
- * Example production URL:
- *   window.POCKETBASE_URL = 'https://yourapp.pockethost.io';
+ * For local development: Keep this uncommented, it will use this URL
+ * To switch back to localhost: Comment out the line below
  */
 
-// PRODUCTION: Uncomment and set your PocketBase URL here
-// window.POCKETBASE_URL = 'YOUR-POCKETBASE-URL';
-
-// DEVELOPMENT: Comment the line above for local development (uses localhost:8090)
+// PRODUCTION: PocketBase URL for public site
+window.POCKETBASE_URL = 'https://chirui-huang.pockethost.io';
