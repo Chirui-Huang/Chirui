@@ -44,8 +44,20 @@ title: "Chirui Huang"
     }
     
     a[style*="padding: 15px 30px"] {
-      padding: 12px 25px !important;
+      padding: 12px 20px !important;
       font-size: 14px !important;
+      flex: 1 1 auto;
+      min-width: 120px !important;
+    }
+    
+    /* Explore My Work section */
+    div[style*="gap: 20px"] {
+      gap: 12px !important;
+    }
+    
+    /* Connect with Me section */
+    div[style*="gap: 25px"] {
+      gap: 15px !important;
     }
   }
   
@@ -75,9 +87,11 @@ title: "Chirui Huang"
     }
     
     a[style*="padding: 15px 30px"] {
-      padding: 10px 20px !important;
-      font-size: 12px !important;
-      width: 100%;
+      padding: 10px 16px !important;
+      font-size: 13px !important;
+      flex: 1 1 100% !important;
+      min-width: unset !important;
+      width: auto !important;
     }
     
     div[style*="max-width: 350px"] {
@@ -87,6 +101,15 @@ title: "Chirui Huang"
     
     div[style*="display: flex"] {
       flex-direction: column !important;
+    }
+    
+    a[style*="color: #0077B5"],
+    a[style*="color: #E4405F"],
+    a[style*="color: #FF0000"],
+    a[style*="color: #333"],
+    a[style*="color: #556B2F"] {
+      width: auto;
+      justify-content: center !important;
     }
   }
   
@@ -121,9 +144,22 @@ title: "Chirui Huang"
     flex-wrap: wrap !important;
   }
   
+  /* Explore My Work & Connect sections - responsive button containers */
+  div[style*="justify-content: center"] {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   /* Link/button responsiveness */
   a[style*="color"] {
     word-break: break-word;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 600px) {
+    a[style*="display: flex"] {
+      white-space: normal;
+    }
   }
 </style>
 
@@ -154,7 +190,7 @@ title: "Chirui Huang"
     </div>
 
     <!-- Latest Updates Section -->
-    <div style="max-width: 900px; margin: 0 auto; margin-bottom: 60px;">
+    <div style="max-width: 900px; margin: 0 auto; margin-bottom: 80px; padding-top: 60px; border-top: 2px solid #f0f0f0;">
       <h2 style="margin-bottom: 30px; color: #333; text-align: center;"><i data-feather="bell" style="width: 40px; height: 40px; color: #556B2F; margin-right: 15px; vertical-align: middle; display: inline-block;"></i>Latest Updates</h2>
     <div style="text-align: left; background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
       <div style="display: flex; align-items: center; margin-bottom: 10px;">
@@ -185,7 +221,7 @@ title: "Chirui Huang"
   </div>
 
   <!-- Quick Links -->
-  <div style="max-width: 900px; margin: 0 auto; margin-bottom: 40px; text-align: center;">
+  <div style="max-width: 900px; margin: 0 auto; margin-bottom: 80px; padding-top: 60px; border-top: 2px solid #f0f0f0; text-align: center;">
     <h2 style="margin-bottom: 30px; text-align: center;">Explore My Work</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
       <a href="{{ site.baseurl }}/profile/" style="background: #556B2F; color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
@@ -207,23 +243,23 @@ title: "Chirui Huang"
   </div>
 
   <!-- Connect Section -->
-  <div style="max-width: 900px; margin: 0 auto; margin-top: 60px; text-align: center;">
+  <div style="max-width: 900px; margin: 0 auto; padding-top: 60px; padding-bottom: 60px; border-top: 2px solid #f0f0f0; text-align: center;">
     <h2 style="margin-bottom: 30px; text-align: center;"><i data-feather="mail" style="width: 40px; height: 40px; color: #556B2F; margin-right: 15px; vertical-align: middle; display: inline-block;"></i>Connect with Me</h2>
-    <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-      <a href="https://www.linkedin.com/in/chirui-h-595ba6270" target="_blank" style="color: #0077B5; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
-        <i data-feather="briefcase" style="width: 24px; height: 24px; color: #0077B5; margin-right: 8px;"></i>LinkedIn
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="https://www.linkedin.com/in/chirui-h-595ba6270" target="_blank" style="color: #0077B5; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
+        <i data-feather="briefcase" style="width: 18px; height: 18px; color: #0077B5; margin-right: 6px;"></i>LinkedIn
       </a>
-      <a href="https://instagram.com/cheerie.huang" target="_blank" style="color: #E4405F; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
-        <i data-feather="camera" style="width: 24px; height: 24px; color: #E4405F; margin-right: 8px;"></i>Instagram
+      <a href="https://instagram.com/cheerie.huang" target="_blank" style="color: #E4405F; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
+        <i data-feather="camera" style="width: 18px; height: 18px; color: #E4405F; margin-right: 6px;"></i>Instagram
       </a>
-      <a href="https://youtube.com/@FredyKraft" target="_blank" style="color: #FF0000; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
-        <i data-feather="tv" style="width: 24px; height: 24px; color: #FF0000; margin-right: 8px;"></i>YouTube
+      <a href="https://youtube.com/@FredyKraft" target="_blank" style="color: #FF0000; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
+        <i data-feather="tv" style="width: 18px; height: 18px; color: #FF0000; margin-right: 6px;"></i>YouTube
       </a>
-      <a href="https://github.com/fredykraft" target="_blank" style="color: #333; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
-        <i data-feather="github" style="width: 24px; height: 24px; color: #333; margin-right: 8px;"></i>GitHub
+      <a href="https://github.com/fredykraft" target="_blank" style="color: #333; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
+        <i data-feather="github" style="width: 18px; height: 18px; color: #333; margin-right: 6px;"></i>GitHub
       </a>
-      <a href="mailto:Fredykraft7@gmail.com" style="color: #556B2F; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
-        <i data-feather="mail" style="width: 24px; height: 24px; color: #556B2F; margin-right: 8px;"></i>Email
+      <a href="mailto:Fredykraft7@gmail.com" style="color: #556B2F; text-decoration: none; font-size: 14px; font-weight: 500; transition: opacity 0.3s; display: flex; align-items: center;">
+        <i data-feather="mail" style="width: 18px; height: 18px; color: #556B2F; margin-right: 6px;"></i>Email
       </a>
     </div>
   </div>
