@@ -33,10 +33,33 @@
   50% { transform: scale(1.05); }
 }
 
+// Desktop and large tablets
+@media only screen and (max-width: 1200px) {
+  .c-content {
+    margin-left: 300px;
+    padding: 0 15px;
+  }
+}
+
+// Tablets and iPad
 @media only screen and (max-width: 900px) {
   .c-content {
     position: static;
     padding: 0 15px 0;
     margin-left: 0;
+  }
+}
+
+// Large phones
+@media only screen and (max-width: 640px) {
+  .c-content {
+    padding: 0 10px;
+  }
+}
+
+// Small phones
+@media only screen and (max-width: 480px) {
+  .c-content {
+    padding: 0 8px;
   }
 }

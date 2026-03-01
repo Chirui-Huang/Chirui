@@ -10,24 +10,41 @@ $(document).ready(function () {
   var resultsContainer = document.getElementById('js-results-container');
 
   if (searchInput && resultsContainer) {
-    var searchJsonPath = searchInput.getAttribute('data-search-json') || '/search.json';
+    var searchJsonPath = searchInput.getAttribute('data-search-json');
+    
+    // Ensure absolute path for production
+    if (searchJsonPath && !searchJsonPath.startsWith('http') && window.location.hostname !== 'localhost') {
+      var origin = window.location.origin;
+      var pathname = window.location.pathname.split('/').slice(0, 2).join('/'); // Get /Chirui part
+      searchJsonPath = origin + pathname + '/search.json';
+    }
+    
     var siteBaseUrl = (searchInput.getAttribute('data-site-baseurl') || '').replace(/\/+$/g, '');
     var searchIndex = [];
 
-    console.log('[Search] Loading from:', searchJsonPath);
+    console.log('[Search] Initializing...');
+    console.log('[Search] JSON path:', searchJsonPath);
+    console.log('[Search] Base URL:', siteBaseUrl);
+    console.log('[Search] Current location:', window.location.href);
 
     // Load search index
     fetch(searchJsonPath)
       .then(function(response) {
+        console.log('[Search] Response status:', response.status);
         if (!response.ok) throw new Error('Failed to load search index');
         return response.json();
       })
       .then(function(data) {
         searchIndex = data;
         console.log('[Search] Loaded', searchIndex.length, 'items');
+        if (searchIndex.length === 0) {
+          console.warn('[Search] Warning: Search index is empty');
+        }
       })
       .catch(function(error) {
         console.error('[Search] Error:', error);
+        console.error('[Search] Failed to load from:', searchJsonPath);
+        resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search is currently unavailable. Please try again later.</p></li>';
       });
 
     // Search function
