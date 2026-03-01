@@ -15,11 +15,18 @@ $(document).ready(function () {
     var homeUrl = searchInput.getAttribute('data-home-url') || '/';
     var siteTitle = (searchInput.getAttribute('data-site-title') || '').toLowerCase();
 
+    console.log('[Search] Loading from:', searchJsonPath);
+
     fetch(searchJsonPath)
       .then(function (response) {
+        console.log('[Search] Response status:', response.status);
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
         return response.json();
       })
       .then(function (searchIndex) {
+        console.log('[Search] Loaded successfully, items:', searchIndex.length);
         var index = (searchIndex || []).map(function (item) {
           var title = decodeEntities(item.title || '');
           var category = decodeEntities(item.category || '');
@@ -42,8 +49,9 @@ $(document).ready(function () {
 
         bindSearch(index);
       })
-      .catch(function () {
-        resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search index unavailable</p></li>';
+      .catch(function (error) {
+        console.error('[Search] Error loading search index:', error);
+        resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search unavailable: ' + error.message + '</p></li>';
       });
 
     function bindSearch(index) {
