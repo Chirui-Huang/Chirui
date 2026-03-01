@@ -5,14 +5,19 @@ permalink: /profile/
 ---
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   .profile-container {
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
   }
   
   .profile-section {
     padding: 60px 20px;
-    border-top: 2px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
   }
   
   .profile-section:first-child {
@@ -25,6 +30,7 @@ permalink: /profile/
     gap: 30px;
     align-items: flex-start;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   
   .profile-left {
@@ -60,15 +66,17 @@ permalink: /profile/
   .contact-details ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   
   .contact-details li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
   
   .contact-details a {
     color: #556B2F;
     text-decoration: none;
+    font-weight: 500;
   }
   
   .contact-details a:hover {
@@ -78,6 +86,7 @@ permalink: /profile/
   @media (max-width: 900px) {
     .profile-grid {
       flex-direction: column;
+      gap: 20px;
     }
     .profile-right {
       width: 100%;
@@ -87,21 +96,54 @@ permalink: /profile/
   
   @media (max-width: 768px) {
     h1 { font-size: 28px; }
-    h2 { font-size: 22px; }
+    h2 { font-size: 24px; }
     p { font-size: 16px; }
+    li { font-size: 16px; }
     .video { max-width: 100%; }
     .profile-section {
       padding: 40px 15px;
     }
+    .profile-grid {
+      gap: 15px;
+    }
   }
   
   @media (max-width: 480px) {
-    h1 { font-size: 24px; }
-    h2 { font-size: 18px; }
-    p { font-size: 14px; }
-    .contact-details li { margin-bottom: 15px; }
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    p { font-size: 15px; }
+    li { font-size: 15px; }
     .profile-section {
       padding: 30px 15px;
+    }
+    .profile-grid {
+      gap: 12px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    h1 { font-size: 42px; }
+    h2 { font-size: 34px; }
+    p { font-size: 21px; }
+    li { font-size: 21px; }
+    .profile-section {
+      padding: 80px 40px;
+    }
+    .profile-container {
+      max-width: 1100px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 40px; }
+    p { font-size: 24px; }
+    li { font-size: 24px; }
+    .profile-section {
+      padding: 100px 60px;
+    }
+    .profile-container {
+      max-width: 1300px;
     }
   }
 </style>

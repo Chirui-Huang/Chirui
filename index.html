@@ -13,102 +13,161 @@ title: "Chirui Huang"
     overflow-x: hidden;
   }
   
-  /* Responsive Typography */
+  /* Responsive Typography - Tablet/iPad */
   @media (max-width: 1024px) {
-    h1 { font-size: 40px !important; }
-    h2 { font-size: 28px !important; }
+    /* Hero section */
+    h1[style*="font-size: 36px"] { font-size: 32px !important; }
+    p[style*="font-size: 20px"] { font-size: 18px !important; }
+    p[style*="font-size: 18px"] { font-size: 17px !important; }
+    
+    /* Section headings */
+    h2[style*="font-size: 28px"] { font-size: 26px !important; }
+    h3[style*="font-size: 22px"] { font-size: 20px !important; }
+    h3[style*="font-size: 20px"] { font-size: 18px !important; }
+    
+    /* Navigation buttons */
+    a[style*="font-size: 16px"] { font-size: 15px !important; }
+    
+    /* Social links */
+    a[style*="font-size: 15px"] { font-size: 14px !important; }
+    
+    /* Update cards */
+    span[style*="font-size: 14px"] { font-size: 13px !important; }
+    span[style*="font-size: 12px"] { font-size: 11px !important; }
   }
   
+  /* Responsive Typography - Mobile/Phone */
   @media (max-width: 768px) {
-    h1 { font-size: 32px !important; }
-    h2 { font-size: 24px !important; }
-    p { font-size: 16px !important; }
+    /* Hero section */
+    h1[style*="font-size: 36px"] { font-size: 28px !important; }
+    p[style*="font-size: 20px"] { font-size: 18px !important; }
+    p[style*="font-size: 18px"] { font-size: 17px !important; }
     
-    div[style*="padding: 60px 20px"] {
-      padding: 40px 15px !important;
+    /* Section headings */
+    h2[style*="font-size: 28px"] { font-size: 24px !important; }
+    h3[style*="font-size: 22px"] { font-size: 20px !important; }
+    h3[style*="font-size: 20px"] { font-size: 18px !important; }
+    
+    /* Navigation buttons */
+    a[style*="font-size: 16px"] { 
+      font-size: 15px !important;
+      padding: 12px 20px !important;
     }
     
-    div[style*="padding: 30px"] {
+    /* Social links */
+    a[style*="font-size: 15px"] { font-size: 14px !important; }
+    
+    /* Update cards */
+    p[style*="line-height: 1.7"] { font-size: 16px !important; }
+    span[style*="font-size: 14px"] { font-size: 13px !important; }
+    
+    /* Form elements */
+    label[style*="font-weight: 600"] { font-size: 15px !important; }
+    input[style*="font-size: 16px"],
+    textarea[style*="font-size: 16px"] { font-size: 15px !important; }
+    button[style*="font-size"] { font-size: 17px !important; }
+    
+    /* Layout adjustments */
+    div[style*="padding: 60px 20px"] {
+      padding: 40px 20px !important;
+    }
+    
+    div[style*="padding: 50px 30px"] {
+      padding: 30px 20px !important;
+    }
+    
+    div[style*="padding: 25px"] {
       padding: 20px !important;
     }
     
-    div[style*="gap: 30px"] {
-      gap: 15px !important;
-      flex-direction: column-reverse !important;
+    div[style*="gap: 40px"] {
+      gap: 25px !important;
     }
     
-    div[style*="flex: 1"] {
-      min-width: 100% !important;
-      flex: none !important;
-      width: 100% !important;
-    }
-    
-    a[style*="padding: 15px 30px"] {
-      padding: 12px 20px !important;
-      font-size: 14px !important;
-      flex: 1 1 auto;
-      min-width: 120px !important;
-    }
-    
-    /* Explore My Work section */
-    div[style*="gap: 20px"] {
+    div[style*="gap: 15px"] {
       gap: 12px !important;
     }
     
-    /* Connect with Me section */
-    div[style*="gap: 25px"] {
-      gap: 15px !important;
+    div[style*="flex: 1"][style*="min-width: 300px"] {
+      min-width: 100% !important;
+      text-align: center !important;
     }
   }
   
+  /* Responsive Typography - Small Mobile */
   @media (max-width: 480px) {
-    h1 { font-size: 24px !important; }
-    h2 { font-size: 18px !important; }
-    h3 { font-size: 16px !important; }
-    p { font-size: 14px !important; }
+    /* Hero section */
+    h1[style*="font-size: 36px"] { font-size: 26px !important; }
+    p[style*="font-size: 20px"] { font-size: 17px !important; }
+    p[style*="font-size: 18px"] { font-size: 16px !important; }
     
-    div[style*="padding: 60px 20px"] {
-      padding: 20px 10px !important;
+    /* Section headings */
+    h2[style*="font-size: 28px"] { font-size: 22px !important; }
+    h3[style*="font-size: 22px"] { font-size: 19px !important; }
+    h3[style*="font-size: 20px"] { font-size: 17px !important; }
+    
+    /* Navigation buttons */
+    a[style*="font-size: 16px"] { 
+      font-size: 14px !important;
+      padding: 10px 18px !important;
     }
     
-    div[style*="padding: 30px"] {
-      padding: 15px !important;
+    /* Social links */
+    a[style*="font-size: 15px"] { 
+      font-size: 14px !important;
+      padding: 10px 16px !important;
+    }
+    
+    /* Update cards */
+    p[style*="line-height: 1.7"] { font-size: 15px !important; }
+    span[style*="font-size: 14px"] { font-size: 13px !important; }
+    span[style*="font-size: 12px"] { font-size: 11px !important; }
+    
+    /* Form elements */
+    label[style*="font-weight: 600"] { font-size: 14px !important; }
+    input[style*="font-size: 16px"],
+    textarea[style*="font-size: 16px"] { font-size: 15px !important; }
+    button[style*="font-size"] { font-size: 16px !important; }
+    
+    /* Layout adjustments */
+    div[style*="padding: 60px 20px"] {
+      padding: 30px 15px !important;
+    }
+    
+    div[style*="padding: 50px 30px"] {
+      padding: 25px 15px !important;
+    }
+    
+    div[style*="padding: 40px"] {
+      padding: 20px !important;
     }
     
     div[style*="padding: 25px"] {
       padding: 15px !important;
     }
     
-    div[style*="gap: 30px"],
-    div[style*="gap: 20px"],
-    div[style*="gap: 25px"] {
+    div[style*="gap: 40px"] {
+      gap: 20px !important;
+      flex-direction: column !important;
+    }
+    
+    div[style*="gap: 15px"] {
       gap: 10px !important;
-      flex-direction: column !important;
     }
     
-    a[style*="padding: 15px 30px"] {
-      padding: 10px 16px !important;
-      font-size: 13px !important;
-      flex: 1 1 100% !important;
-      min-width: unset !important;
-      width: auto !important;
+    /* Profile photo size adjustment */
+    div[style*="width: 180px"][style*="height: 180px"] {
+      width: 140px !important;
+      height: 140px !important;
     }
     
-    div[style*="max-width: 350px"] {
-      max-width: 280px !important;
-      margin: 0 auto !important;
-    }
-    
-    div[style*="display: flex"] {
-      flex-direction: column !important;
-    }
-    
+    /* Social links full width on tiny screens */
     a[style*="color: #0077B5"],
     a[style*="color: #E4405F"],
     a[style*="color: #FF0000"],
     a[style*="color: #333"],
     a[style*="color: #556B2F"] {
-      width: auto;
+      width: 100%;
       justify-content: center !important;
     }
   }
@@ -161,6 +220,130 @@ title: "Chirui Huang"
       white-space: normal;
     }
   }
+
+  /* Responsive Typography - Large Desktop Screens */
+  @media (min-width: 1440px) {
+    /* Hero section */
+    h1[style*="font-size: 36px"] { font-size: 42px !important; }
+    p[style*="font-size: 20px"] { font-size: 23px !important; }
+    p[style*="font-size: 18px"] { font-size: 21px !important; }
+    
+    /* Section headings */
+    h2[style*="font-size: 28px"] { font-size: 32px !important; }
+    h3[style*="font-size: 22px"] { font-size: 25px !important; }
+    h3[style*="font-size: 20px"] { font-size: 23px !important; }
+    
+    /* Navigation buttons */
+    a[style*="font-size: 16px"] { font-size: 18px !important; }
+    
+    /* Social links */
+    a[style*="font-size: 15px"] { font-size: 17px !important; }
+    
+    /* Update cards */
+    span[style*="font-size: 14px"] { font-size: 16px !important; }
+    span[style*="font-size: 12px"] { font-size: 14px !important; }
+
+    /* Form elements */
+    label[style*="font-weight: 600"] { font-size: 18px !important; }
+    input[style*="font-size: 16px"],
+    textarea[style*="font-size: 16px"] { font-size: 18px !important; }
+    button[style*="font-size"] { font-size: 19px !important; }
+
+    /* Box responsiveness - Large screens */
+    div[style*="padding: 60px 20px"] {
+      padding: 80px 40px !important;
+    }
+    
+    div[style*="padding: 50px 30px"] {
+      padding: 70px 50px !important;
+    }
+    
+    div[style*="padding: 40px"] {
+      padding: 60px !important;
+    }
+    
+    div[style*="padding: 30px 0"] {
+      padding: 50px 0 !important;
+    }
+
+    div[style*="gap: 40px"] {
+      gap: 50px !important;
+    }
+    
+    div[style*="gap: 15px"] {
+      gap: 20px !important;
+    }
+
+    div[style*="max-width: 900px"] {
+      max-width: 1100px !important;
+    }
+
+    div[style*="max-width: 700px"] {
+      max-width: 900px !important;
+    }
+  }
+
+  /* Responsive Typography - Extra Large Desktop Screens */
+  @media (min-width: 1920px) {
+    /* Hero section */
+    h1[style*="font-size: 36px"] { font-size: 48px !important; }
+    p[style*="font-size: 20px"] { font-size: 26px !important; }
+    p[style*="font-size: 18px"] { font-size: 24px !important; }
+    
+    /* Section headings */
+    h2[style*="font-size: 28px"] { font-size: 36px !important; }
+    h3[style*="font-size: 22px"] { font-size: 28px !important; }
+    h3[style*="font-size: 20px"] { font-size: 26px !important; }
+    
+    /* Navigation buttons */
+    a[style*="font-size: 16px"] { font-size: 20px !important; }
+    
+    /* Social links */
+    a[style*="font-size: 15px"] { font-size: 19px !important; }
+    
+    /* Update cards */
+    span[style*="font-size: 14px"] { font-size: 18px !important; }
+    span[style*="font-size: 12px"] { font-size: 16px !important; }
+
+    /* Form elements */
+    label[style*="font-weight: 600"] { font-size: 20px !important; }
+    input[style*="font-size: 16px"],
+    textarea[style*="font-size: 16px"] { font-size: 20px !important; }
+    button[style*="font-size"] { font-size: 22px !important; }
+
+    /* Box responsiveness - Extra large screens */
+    div[style*="padding: 60px 20px"] {
+      padding: 100px 60px !important;
+    }
+    
+    div[style*="padding: 50px 30px"] {
+      padding: 80px 70px !important;
+    }
+    
+    div[style*="padding: 40px"] {
+      padding: 70px !important;
+    }
+    
+    div[style*="padding: 30px 0"] {
+      padding: 60px 0 !important;
+    }
+
+    div[style*="gap: 40px"] {
+      gap: 60px !important;
+    }
+    
+    div[style*="gap: 15px"] {
+      gap: 25px !important;
+    }
+
+    div[style*="max-width: 900px"] {
+      max-width: 1300px !important;
+    }
+
+    div[style*="max-width: 700px"] {
+      max-width: 1000px !important;
+    }
+  }
 </style>
 
 <div style="width: 100%; text-align: center; padding: 60px 20px 40px; box-sizing: border-box;">
@@ -176,10 +359,10 @@ title: "Chirui Huang"
       <!-- Introduction -->
       <div style="flex: 1; min-width: 300px; max-width: 600px; text-align: left;">
         <div style="margin-bottom: 15px;">
-          <h1 style="font-size: 42px; margin: 0 0 8px 0; color: #333; font-weight: 700;">Chirui Huang</h1>
-          <p style="font-size: 18px; color: #757575; margin: 0; line-height: 1.6;">Operations, Information & Technology Researcher</p>
+          <h1 style="font-size: 36px; margin: 0 0 8px 0; color: #333; font-weight: 700;">Chirui Huang</h1>
+          <p style="font-size: 20px; color: #757575; margin: 0; line-height: 1.6;">Operations, Information & Technology Researcher</p>
         </div>
-        <p style="font-size: 17px; line-height: 1.8; color: #555; margin: 0; padding: 20px 0 0 0; border-top: 2px solid #f0f0f0;">
+        <p style="font-size: 18px; line-height: 1.8; color: #555; margin: 0; padding: 20px 0 0 0; border-top: 2px solid #f0f0f0;">
           I conduct research in <strong>operations, information systems, and technology</strong>. 
           My interests include investing and performing arts. Welcome to my digital space where I share research, insights, and creative pursuits.
         </p>
@@ -189,19 +372,19 @@ title: "Chirui Huang"
     <!-- Quick Navigation -->
     <div style="max-width: 900px; margin: 0 auto 70px; text-align: center;">
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-        <a href="{{ site.baseurl }}/profile/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
+        <a href="{{ site.baseurl }}/profile/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
           About Me
         </a>
-        <a href="{{ site.baseurl }}/research/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
+        <a href="{{ site.baseurl }}/research/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
           Research
         </a>
-        <a href="{{ site.baseurl }}/podcasts/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
+        <a href="{{ site.baseurl }}/podcasts/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
           Podcasts
         </a>
-        <a href="{{ site.baseurl }}/videos/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
+        <a href="{{ site.baseurl }}/videos/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
           Videos
         </a>
-        <a href="{{ site.baseurl }}/lab/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
+        <a href="{{ site.baseurl }}/lab/" style="background: #556B2F; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85,107,47,0.3);">
           Lab
         </a>
       </div>
@@ -209,14 +392,14 @@ title: "Chirui Huang"
 
     <!-- Latest Updates Section -->
     <div style="max-width: 900px; margin: 0 auto 70px; padding: 50px 30px; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-      <h2 style="margin-bottom: 35px; color: #333; text-align: center; font-size: 32px;">
+      <h2 style="margin-bottom: 35px; color: #333; text-align: center; font-size: 28px;">
         <i data-feather="bell" style="width: 36px; height: 36px; color: #556B2F; margin-right: 12px; vertical-align: middle; display: inline-block;"></i>
         Latest Updates
       </h2>
     
     <div style="text-align: left; background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s;">
       <div style="display: flex; align-items: center; margin-bottom: 12px;">
-        <span style="background: #556B2F; color: white; padding: 6px 14px; border-radius: 5px; font-size: 11px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">NEW</span>
+        <span style="background: #556B2F; color: white; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">NEW</span>
         <span style="color: #999; font-size: 14px;">February 2026</span>
       </div>
       <h3 style="margin-bottom: 10px; color: #333; font-size: 20px;">
@@ -227,7 +410,7 @@ title: "Chirui Huang"
     
     <div style="text-align: left; background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 25px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s;">
       <div style="display: flex; align-items: center; margin-bottom: 12px;">
-        <span style="background: #D3D3B0; color: #333; padding: 6px 14px; border-radius: 5px; font-size: 11px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">RESEARCH</span>
+        <span style="background: #D3D3B0; color: #333; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">RESEARCH</span>
         <span style="color: #999; font-size: 14px;">Coming Soon</span>
       </div>
       <h3 style="margin-bottom: 10px; color: #333; font-size: 20px;">
@@ -238,7 +421,7 @@ title: "Chirui Huang"
     
     <div style="text-align: left; background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s;">
       <div style="display: flex; align-items: center; margin-bottom: 12px;">
-        <span style="background: #a0a0a0; color: white; padding: 6px 14px; border-radius: 5px; font-size: 11px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">VIDEO</span>
+        <span style="background: #a0a0a0; color: white; padding: 6px 14px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-right: 10px; letter-spacing: 0.5px;">VIDEO</span>
         <span style="color: #999; font-size: 14px;">Coming Soon</span>
       </div>
       <h3 style="margin-bottom: 10px; color: #333; font-size: 20px;">
@@ -250,7 +433,7 @@ title: "Chirui Huang"
 
   <!-- Connect Section -->
   <div style="max-width: 900px; margin: 70px auto; padding: 50px 30px; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
-    <h2 style="margin-bottom: 35px; text-align: center; font-size: 32px; color: #333;">
+    <h2 style="margin-bottom: 35px; text-align: center; font-size: 28px; color: #333;">
       <i data-feather="users" style="width: 36px; height: 36px; color: #556B2F; margin-right: 12px; vertical-align: middle; display: inline-block;"></i>
       Connect with Me
     </h2>
@@ -275,7 +458,7 @@ title: "Chirui Huang"
 
   <!-- Contact Form Section -->
   <div style="max-width: 700px; margin: 60px auto; padding: 40px; background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;">
-    <h3 style="color: #333; margin-bottom: 25px; font-size: 28px; text-align: center;">
+    <h3 style="color: #333; margin-bottom: 25px; font-size: 22px; text-align: center;">
       <i data-feather="message-circle" style="width: 28px; height: 28px; color: #888; margin-right: 12px; vertical-align: middle; display: inline-block;"></i>
       Contact Form
     </h3>
@@ -341,7 +524,7 @@ title: "Chirui Huang"
   <!-- Newsletter Section -->
   <div style="max-width: 700px; margin: 60px auto; padding: 40px; background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;">
     <div style="text-align: center; margin-bottom: 25px;">
-      <h3 style="color: #333; font-size: 28px; margin-bottom: 10px;">
+      <h3 style="color: #333; font-size: 22px; margin-bottom: 10px;">
         <i data-feather="mail" style="width: 28px; height: 28px; color: #556B2F; margin-right: 12px; vertical-align: middle; display: inline-block;"></i>
         Newsletter
       </h3>
@@ -353,7 +536,7 @@ title: "Chirui Huang"
   <!-- Guest Book Section -->
   <div style="max-width: 900px; margin: 70px auto 40px; padding: 50px 30px; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
     <div style="text-align: center; margin-bottom: 30px;">
-      <h2 style="margin-bottom: 15px; font-size: 32px; color: #333;">
+      <h2 style="margin-bottom: 15px; font-size: 28px; color: #333;">
         <i data-feather="message-square" style="width: 36px; height: 36px; color: #556B2F; margin-right: 12px; vertical-align: middle; display: inline-block;"></i>
         Guest Book
       </h2>
