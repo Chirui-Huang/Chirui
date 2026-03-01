@@ -10,13 +10,16 @@ $(document).ready(function () {
   var resultsContainer = document.getElementById('js-results-container');
 
   if (searchInput && resultsContainer) {
-    var searchJsonPath = searchInput.getAttribute('data-search-json');
+    var searchJsonPath = searchInput.getAttribute('data-search-json') || '/search.json';
+    var isSearchReady = false;
+    var searchLoadFailed = false;
     
     // Ensure absolute path for production
     if (searchJsonPath && !searchJsonPath.startsWith('http') && window.location.hostname !== 'localhost') {
       var origin = window.location.origin;
       var pathname = window.location.pathname.split('/').slice(0, 2).join('/'); // Get /Chirui part
-      searchJsonPath = origin + pathname + '/search.json';
+      var basePath = pathname && pathname !== '/' ? pathname : '';
+      searchJsonPath = origin + basePath + '/search.json';
     }
     
     var siteBaseUrl = (searchInput.getAttribute('data-site-baseurl') || '').replace(/\/+$/g, '');
@@ -36,12 +39,14 @@ $(document).ready(function () {
       })
       .then(function(data) {
         searchIndex = data;
+        isSearchReady = true;
         console.log('[Search] Loaded', searchIndex.length, 'items');
         if (searchIndex.length === 0) {
           console.warn('[Search] Warning: Search index is empty');
         }
       })
       .catch(function(error) {
+        searchLoadFailed = true;
         console.error('[Search] Error:', error);
         console.error('[Search] Failed to load from:', searchJsonPath);
         resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search is currently unavailable. Please try again later.</p></li>';
@@ -49,8 +54,18 @@ $(document).ready(function () {
 
     // Search function
     function performSearch(query) {
-      if (!query || query.length < 2) {
+      if (!query || query.length < 1) {
         resultsContainer.innerHTML = '';
+        return;
+      }
+
+      if (searchLoadFailed) {
+        resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search is unavailable right now. Please refresh and try again.</p></li>';
+        return;
+      }
+
+      if (!isSearchReady) {
+        resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Loading search index...</p></li>';
         return;
       }
 
@@ -210,30 +225,6 @@ $(document).ready(function () {
         resultsContainer.innerHTML = '';
       }
     });
-  }
-
-      console.log('[Search] Successfully initialized');
-    } catch (error) {
-      console.error('[Search] Initialization error:', error);
-      resultsContainer.innerHTML = '<li class="c-search-results-list__item"><p class="c-search-results-list__empty">Search temporarily unavailable</p></li>';
-    }
-
-    // Clear results when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!event.target.closest('.c-search')) {
-        resultsContainer.innerHTML = '';
-      }
-    });
-
-    // Clear results on Escape key
-    searchInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        searchInput.value = '';
-        resultsContainer.innerHTML = '';
-      }
-    });
-  } else if (searchInput && resultsContainer) {
-    console.error('[Search] SimpleJekyllSearch library not loaded');
   }
 
 
