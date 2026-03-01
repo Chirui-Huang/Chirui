@@ -18,9 +18,11 @@ COOKIE_TRACKING_GUIDE.md
 *.local.*
 *.secret.*
 
-# PocketBase
+# PocketBase - Executable and data are private
 pocketbase
 pb_data/
-pb_migrations/
 pocketbase.log
 nohup.out
+
+# PocketBase migrations are safe to commit (schema only, no data)
+# pb_migrations/ files can be committed to track database schema changes

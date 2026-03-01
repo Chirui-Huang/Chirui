@@ -176,7 +176,7 @@ async function submitComment(commentData) {
       ...commentData,
       page_url: window.location.pathname,
       status: 'pending',
-      created: new Date().toISOString()
+      created_date: new Date().toISOString()
     };
 
     await pb.createRecord('comments', data);
