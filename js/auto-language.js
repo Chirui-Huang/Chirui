@@ -12,8 +12,11 @@
     if (!languageTag) return DEFAULT_LANGUAGE;
 
     var lower = String(languageTag).toLowerCase();
-    if (lower === 'zh-cn' || lower === 'zh-hans') return 'zh-CN';
-    if (lower === 'zh-tw' || lower === 'zh-hant') return 'zh-TW';
+    // Handle Chinese variants - all mainland/default variants map to zh-CN (Simplified)
+    if (lower === 'zh' || lower === 'zh-cn' || lower === 'zh-hans' || lower.indexOf('zh-') === 0) {
+      if (lower === 'zh-tw' || lower === 'zh-hant' || lower === 'zh-yue') return 'zh-TW';
+      return 'zh-CN';
+    }
 
     var base = lower.split('-')[0];
     if (SUPPORTED_LANGUAGES.indexOf(base) !== -1) return base;
