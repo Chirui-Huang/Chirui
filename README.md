@@ -1,157 +1,207 @@
-# 🌟 Chirui Huang | Personal Website & Portfolio
+# 🌟 Chirui Huang | Personal Website
 
-A modern, beautiful website showcasing research, creative projects, and professional achievements.
+> A beautiful, modern website to showcase your research, creative projects, and connect with the world
 
-**[💻 Visit Website](https://chirui.online)** • **[🚀 Get Started](#quick-start)** • **[💖 Support](#-support-me)**
-
----
-
-## 🎯 What's This About?
-
-This is a personal website built with Jekyll, hosted on GitHub Pages, and running on a custom domain. I use it to showcase my research in operations, information systems, and technology, plus share content about my interests in investing and expressive art.
+**[🌐 Visit Website](https://chirui.online)** | **[📖 How to Use](#how-to-use)** | **[💖 Support Me](#support-me)**
 
 ---
 
-## ⚡ Quick Start
+## 🎯 What is This?
 
-### 1. Install Ruby
+This is my personal website built with **Jekyll** and hosted on **GitHub Pages**. It's a clean, modern platform where I share:
+
+- 📚 Research in operations & technology
+- 🎥 Videos and podcasts
+- 💡 Ideas and projects
+- 📝 Articles and insights
+
+**Live Site:** https://chirui.online
+
+---
+
+## ✨ What You'll Find
+
+### 📄 Pages Included
+- **🏠 Home** - First impression with featured updates
+- **👤 About** - My background and interests
+- **📚 Research** - Academic work and projects
+- **🎙️ Podcasts** - Audio content
+- **🎥 Videos** - Video gallery
+- **🛠️ Tools** - Useful resources and lab
+
+### 🎨 Features
+✅ Beautiful, modern design  
+✅ Works on phone, tablet, and desktop  
+✅ Dark mode support  
+✅ Search functionality  
+✅ Visitor comment section (Guest Book)  
+✅ Connected social media links  
+
+---
+
+## 🚀 How to Use
+
+### For Visitors
+Simply visit **[chirui.online](https://chirui.online)** to explore!
+
+### For Developers (Want to Copy This?)
+
+**Step 1: Get Setup**
 ```bash
-# Make sure you have Ruby 3.x installed
+# Make sure you have Ruby installed
 ruby --version
 
-# Install Bundler
+# Install Bundler (package manager for Ruby)
 gem install bundler
 ```
 
-### 2. Run Locally
+**Step 2: Clone & Install**
 ```bash
-# Clone the repo
 git clone https://github.com/fredykraft/Chirui.git
 cd Chirui
-
-# Install dependencies
 bundle install
+```
 
-# Start the server
+**Step 3: Run Locally**
+```bash
 bundle exec jekyll serve --config _config.yml,_config_dev.yml
 ```
 
-### 3. View Your Site
-Open your browser and go to: **http://localhost:4000**
+**Step 4: Open Browser**
+Go to: `http://localhost:4000`
+
+You should see the website running locally!
 
 ---
 
-## 📂 What's Inside?
+## 📁 Project Structure
 
 ```
-📁 Chirui/
-├── 🏠 index.html          → Homepage
-├── 👤 profile.html        → About me
-├── 📚 research.html       → Research projects
-├── 🎙️  podcasts.html      → Podcast content
-├── 🎥 videos.html         → Video gallery
-├── 🛠️  tools.html         → Tools & lab
-├── _config.yml            → Site settings
-└── _includes/             → Website components
+Chirui Website/
+├── index.html              Home page
+├── profile.html            About me page
+├── research.html           Research projects
+├── podcasts.html           Podcast content
+├── videos.html             Video gallery
+├── tools.html              Tools & lab
+├── _config.yml             Site settings
+├── _includes/              Website parts (header, footer, etc)
+├── _sass/                  Website styles
+└── js/                     Website features
 ```
 
 ---
 
-## 🚀 Deploy to GitHub
+## 💻 Make Changes
 
-Ready to share your changes with the world?
+Want to update the website?
 
 ```bash
+# Edit any file
+# Then save your changes
+
 git add .
-git commit -m "Your update description"
+git commit -m "My update description"
 git push origin main
 ```
 
-That's it! GitHub Pages will automatically deploy your site in 1-3 minutes.
+✅ **That's it!** Your changes go live in 1-3 minutes.
 
 ---
 
-## 🆘 Troubleshooting
+## 🆘 Common Issues
 
-**"bundle: command not found"**
+**"Ruby/Bundler not found?"**
 ```bash
 gem install bundler
 ```
 
-**"Port 4000 is already in use"**
+**"Port 4000 is busy?"**
 ```bash
 lsof -ti:4000 | xargs kill -9
 ```
 
-**"My changes aren't showing"**
-- Hard refresh: `Cmd + Shift + R` (or `Ctrl + Shift + R` on Windows)
+**"Changes not showing?"**
+- Refresh browser: `Cmd + Shift + R` (Mac) or `Ctrl + Shift + R` (Windows)
 - Restart the server
-- Clear your browser cache
+- Clear browser cache
 
 ---
 
 ## 💖 Support Me
 
-If you find this project useful or inspiring, consider supporting my work:
+If you find this project helpful or inspiring, please consider supporting my work!
 
-💜 **[GitHub Sponsors](https://github.com/sponsors/fredykraft)** - Monthly sponsorship  
-💳 **[PayPal](https://www.paypal.me/chiruihuang079)** - One-time or recurring donations
+### Ways to Support
 
-Your support helps me:
-- Continue research and content creation
-- Make educational videos and podcasts
-- Develop open-source projects
-- Create new tools and resources
+#### 💜 GitHub Sponsors
+[**Become a Sponsor**](https://github.com/sponsors/fredykraft)
+- Monthly recurring support
+- Direct support from GitHub
+- Help me continue creating content
+
+#### 💳 PayPal
+[**Donate via PayPal**](https://www.paypal.me/chiruihuang079)
+- One-time donation
+- Or set up recurring donation
+- Direct transfer to my account
+
+### What Your Support Helps With
+
+Your donations help me:
+- 📚 Continue research and writing
+- 🎥 Create educational videos
+- 🎙️ Produce podcast content
+- 💻 Develop open-source projects
+- 🎨 Build new creative projects
+
+**Every little bit helps!** Even small donations mean a lot. 🙏
 
 ---
 
 ## 🤝 Let's Collaborate!
 
-I'm always excited about new collaborations:
+I'm always interested in working together!
 
-- **Research Partners** - Academic partnerships and co-authoring
-- **Content Creators** - Podcast interviews, video collaborations
-- **Developers** - Open-source contributions and projects
+### What I'm Looking For
+- **👥 Research Partners** - Academic collaborations, co-authoring
+- **🎬 Content Creators** - Podcast interviews, video collabs
+- **💻 Developers** - Open-source projects, code contributions
 
-📧 **Reach out:** [chiruihuang079@gmail.com](mailto:chiruihuang079@gmail.com)
+### Get in Touch
+
+📧 **Email:** [chiruihuang079@gmail.com](mailto:chiruihuang079@gmail.com)
 
 📱 **Connect:**
 - LinkedIn: [Chirui Huang](https://www.linkedin.com/in/chirui-h-595ba6270)
 - GitHub: [@fredykraft](https://github.com/fredykraft)
 - Website: [chirui.online](https://chirui.online)
+- YouTube: [FredyKraft](https://youtube.com/@FredyKraft)
+- Bilibili: [Chirui Huang](https://space.bilibili.com/3690992339258133)
 
 ---
 
-## ✅ Key Features
+## 📚 Built With
 
-✨ **Modern & Responsive** - Works on desktop, tablet, and mobile  
-🌓 **Dark Mode** - Easy on the eyes at night  
-📱 **Mobile-Friendly** - Perfect experience on all devices  
-🔍 **Search** - Find content easily  
-🎨 **Beautiful Design** - Clean and professional look  
-💬 **Guest Book** - Visitors can leave messages  
+- **Jekyll** - Website builder
+- **GitHub Pages** - Free hosting
+- **Feather Icons** - Beautiful icons
 
 ---
 
 ## 📝 License
 
-Open source and free to use under the [MIT License](LICENSE).
-
----
-
-## 🙏 Built With
-
-- [Jekyll](https://jekyllrb.com/) - Static site generator
-- [GitHub Pages](https://pages.github.com/) - Free hosting
-- [Feather Icons](https://feathericons.com/) - Beautiful icons
+Open source under the [MIT License](LICENSE)
 
 ---
 
 <div align="center">
 
-Made with ❤️ by **[Chirui Huang](https://chirui.online)**
+### Made with ❤️ by [Chirui Huang](https://chirui.online)
 
-⭐ **Found this helpful? Star the repo!**
+**[⭐ Star this repo if you find it helpful!](https://github.com/fredykraft/Chirui)**
+
+**[💖 Support my work](https://github.com/sponsors/fredykraft)** | **[🌐 Visit Website](https://chirui.online)**
 
 </div>
 
