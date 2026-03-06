@@ -1,8 +1,8 @@
-# 🌟 Chirui Huang
+# 🌟 Chirui Huang | Personal Website & Portfolio
 
-> Welcome to my personal website! A modern platform where I share my research, creative projects, and connect with the world.
+A modern, beautiful website showcasing research, creative projects, and professional achievements.
 
-**[Visit Website](https://chirui.online)** • **[View Live](https://github.com/fredykraft/Chirui)** • **[Get Started](#quick-start)**
+**[💻 Visit Website](https://chirui.online)** • **[🚀 Get Started](#quick-start)** • **[💖 Support](#-support-me)**
 
 ---
 
