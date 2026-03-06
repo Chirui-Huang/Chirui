@@ -4,6 +4,8 @@
 
 **[🌐 Visit Website](https://chirui.online)** | **[📖 How to Use](#how-to-use)** | **[💖 Support Me](#support-me)**
 
+> ⏰ Last Updated: March 6, 2026
+
 ---
 
 ## 🎯 What is This?
