@@ -212,12 +212,20 @@ title: "Chirui Huang"
   /* Link/button responsiveness */
   a[style*="color"] {
     word-break: break-word;
-    white-space: nowrap;
   }
   
   @media (max-width: 600px) {
     a[style*="display: flex"] {
       white-space: normal;
+      flex: 1 1 auto;
+      min-width: 140px;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 601px) {
+    a[style*="color"] {
+      white-space: nowrap;
     }
   }
 
