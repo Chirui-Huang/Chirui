@@ -1,0 +1,14 @@
+Contact: mailto:chiruihuang079@gmail.com
+Expires: 2027-03-06T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://chirui-huang.github.io/.well-known/security.txt
+
+# Security Policy
+Policy: https://chirui-huang.github.io/SECURITY.md
+
+# About
+This website is a personal academic portfolio with visitor analytics.
+We take security seriously and appreciate responsible disclosure.
+
+# Acknowledgments
+Acknowledgments: https://chirui-huang.github.io/SECURITY.md#acknowledgments

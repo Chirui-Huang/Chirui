@@ -1,0 +1,223 @@
+---
+layout: default
+title: "Visitor Security Guide"
+description: "How we protect you while visiting our website"
+---
+
+<div class="container" style="max-width: 900px; margin: 40px auto; padding: 20px;">
+  <article class="article-content">
+    <h1 style="color: #556B2F; margin-bottom: 10px;">🔒 Your Security Matters</h1>
+    <p style="color: #666; font-size: 16px; margin-bottom: 40px;">
+      We've implemented comprehensive security measures to protect you while visiting our website.
+      Here's what we do to keep you safe.
+    </p>
+
+    <!-- Security Overview -->
+    <div style="background: #f8f9fa; padding: 30px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #556B2F;">
+      <h2 style="color: #556B2F; margin-top: 0;">🛡️ Security Overview</h2>
+      <p>Your privacy and security are our top priorities. We've implemented multiple layers of protection:</p>
+      <ul style="line-height: 1.8;">
+        <li><strong>Encrypted Connections:</strong> All data is transmitted over HTTPS with TLS encryption</li>
+        <li><strong>Input Protection:</strong> Every form submission is validated and sanitized</li>
+        <li><strong>Rate Limiting:</strong> Protection against spam and abuse</li>
+        <li><strong>CSRF Protection:</strong> Forms are protected against cross-site request forgery</li>
+        <li><strong>Cookie Consent:</strong> No tracking without your explicit permission</li>
+        <li><strong>Content Security:</strong> Strict policies prevent malicious code injection</li>
+      </ul>
+    </div>
+
+    <!-- What We Protect -->
+    <h2 style="color: #556B2F; margin-top: 40px;">🔐 What We Protect</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0;">
+      <!-- Your Data -->
+      <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 3px solid #556B2F;">
+        <h3 style="color: #556B2F; margin-top: 0;">📧 Your Personal Data</h3>
+        <ul style="line-height: 1.8; color: #555;">
+          <li>Email addresses</li>
+          <li>Names</li>
+          <li>Messages & comments</li>
+          <li>Form submissions</li>
+        </ul>
+        <p style="color: #777; font-size: 14px; margin-bottom: 0;">
+          All personal data is encrypted in transit and at rest. We never share your information with third parties.
+        </p>
+      </div>
+
+      <!-- Your Privacy -->
+      <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 3px solid #FFB6C1;">
+        <h3 style="color: #FFB6C1; margin-top: 0;">🔒 Your Privacy</h3>
+        <ul style="line-height: 1.8; color: #555;">
+          <li>Browsing patterns</li>
+          <li>Cookie preferences</li>
+          <li>Session data</li>
+          <li>Activity tracking</li>
+        </ul>
+        <p style="color: #777; font-size: 14px; margin-bottom: 0;">
+          You control what we track. Analytics are opt-in only and stored locally. You can delete your data anytime.
+        </p>
+      </div>
+
+      <!-- Your Security -->
+      <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 3px solid #D3D3B0;">
+        <h3 style="color: #556B2F; margin-top: 0;">🛡️ Your Security</h3>
+        <ul style="line-height: 1.8; color: #555;">
+          <li>XSS protection</li>
+          <li>CSRF protection</li>
+          <li>Rate limiting</li>
+          <li>Spam filtering</li>
+        </ul>
+        <p style="color: #777; font-size: 14px; margin-bottom: 0;">
+          Multiple security layers prevent attacks and protect your interactions with our website.
+        </p>
+      </div>
+    </div>
+
+    <!-- Security Features -->
+    <h2 style="color: #556B2F; margin-top: 40px;">✨ Security Features in Action</h2>
+    
+    <!-- HTTPS -->
+    <div style="background: white; padding: 30px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3 style="color: #556B2F; margin-top: 0;">🔐 HTTPS Encryption</h3>
+      <p><strong>What it is:</strong> All connections use HTTPS with TLS 1.2+ encryption</p>
+      <p><strong>What it protects:</strong> Prevents eavesdropping, tampering, and man-in-the-middle attacks</p>
+      <p><strong>How you benefit:</strong> Your data is encrypted in transit - nobody can intercept or read it</p>
+      <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+        <strong>✅ Status:</strong> <span style="color: #2e7d32;">Active - Look for the padlock icon in your browser</span>
+      </div>
+    </div>
+
+    <!-- Form Security -->
+    <div style="background: white; padding: 30px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3 style="color: #556B2F; margin-top: 0;">📝 Form Protection</h3>
+      <p><strong>What it is:</strong> CSRF tokens, rate limiting, and input validation on all forms</p>
+      <p><strong>What it protects:</strong> Prevents malicious submissions, spam, and cross-site attacks</p>
+      <p><strong>How you benefit:</strong> Your form submissions are secure and validated</p>
+      <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 15px;">
+        <strong>⚡ Rate Limits:</strong>
+        <ul style="margin: 10px 0 0 20px;">
+          <li>Contact form: 5 submissions per 5 minutes</li>
+          <li>Newsletter: 3 subscriptions per 10 minutes</li>
+          <li>Comments: 3 comments per 30 minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content Security Policy -->
+    <div style="background: white; padding: 30px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3 style="color: #556B2F; margin-top: 0;">🔒 Content Security Policy (CSP)</h3>
+      <p><strong>What it is:</strong> Browser-enforced policy that controls what resources can load</p>
+      <p><strong>What it protects:</strong> Prevents XSS attacks, clickjacking, and code injection</p>
+      <p><strong>How you benefit:</strong> Malicious scripts cannot execute on this website</p>
+      <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+        <strong>✅ Status:</strong> <span style="color: #2e7d32;">Enforced - Only trusted sources allowed</span>
+      </div>
+    </div>
+
+    <!-- Cookie Protection -->
+    <div style="background: white; padding: 30px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3 style="color: #556B2F; margin-top: 0;">🍪 Cookie Management</h3>
+      <p><strong>What it is:</strong> Transparent cookie consent system with granular controls</p>
+      <p><strong>What it protects:</strong> Your privacy preferences and browsing data</p>
+      <p><strong>How you benefit:</strong> You decide what's tracked - no tracking without consent</p>
+      <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+        <strong>🎯 Your Controls:</strong> Accept, decline, or customize cookie settings anytime
+        <br><br>
+        <a href="#" onclick="document.getElementById('cookie-settings-modal').style.display='block'; return false;" 
+           style="color: #556B2F; text-decoration: underline;">Change Cookie Settings</a>
+      </div>
+    </div>
+
+    <!-- Best Practices for You -->
+    <h2 style="color: #556B2F; margin-top: 40px;">💡 Best Practices for You</h2>
+    <div style="background: #fff8e1; padding: 30px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #ffa726;">
+      <p>While we protect you on our end, here are some tips to stay safe online:</p>
+      <ul style="line-height: 1.8;">
+        <li>✅ Always check for HTTPS (padlock icon) before entering personal information</li>
+        <li>✅ Use strong, unique passwords for accounts</li>
+        <li>✅ Keep your browser and operating system updated</li>
+        <li>✅ Be cautious of phishing emails - we'll never ask for passwords via email</li>
+        <li>✅ Clear your browser cache and cookies periodically</li>
+        <li>✅ Review cookie settings and manage your preferences</li>
+      </ul>
+    </div>
+
+    <!-- Report Security Issues -->
+    <h2 style="color: #556B2F; margin-top: 40px;">🚨 Report Security Issues</h2>
+    <div style="background: #ffebee; padding: 30px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #e53935;">
+      <p style="margin-top: 0;">
+        <strong>Found a security vulnerability?</strong> Please report it responsibly.
+      </p>
+      <p>
+        Email: <a href="mailto:security@example.com" style="color: #e53935;">security@example.com</a>
+        <br>
+        Please do not disclose security issues publicly until we've had a chance to address them.
+      </p>
+      <p style="margin-bottom: 0;">
+        We appreciate your help in keeping our visitors safe and will acknowledge your contribution 
+        (with your permission) once the issue is resolved.
+      </p>
+    </div>
+
+    <!-- Additional Resources -->
+    <h2 style="color: #556B2F; margin-top: 40px;">📚 Additional Resources</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+      <a href="{{ '/SECURITY_PRIVACY.html' | relative_url }}" 
+         style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; display: block; border-top: 3px solid #556B2F;">
+        <h4 style="color: #556B2F; margin: 0 0 10px 0;">Privacy Policy</h4>
+        <p style="color: #666; margin: 0; font-size: 14px;">Learn about our data collection and usage practices</p>
+      </a>
+      
+      <a href="{{ '/WEBSITE_SECURITY.html' | relative_url }}" 
+         style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; display: block; border-top: 3px solid #FFB6C1;">
+        <h4 style="color: #FFB6C1; margin: 0 0 10px 0;">Security Guide</h4>
+        <p style="color: #666; margin: 0; font-size: 14px;">Technical details about our security implementation</p>
+      </a>
+      
+      <a href="{{ '/SECURITY.html' | relative_url }}" 
+         style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; display: block; border-top: 3px solid #D3D3B0;">
+        <h4 style="color: #556B2F; margin: 0 0 10px 0;">Security Policy</h4>
+        <p style="color: #666; margin: 0; font-size: 14px;">Our security practices and reporting guidelines</p>
+      </a>
+    </div>
+
+    <!-- Footer Note -->
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 40px 0 20px 0; text-align: center;">
+      <p style="color: #666; margin: 0;">
+        <strong>Questions about security?</strong> Contact us at 
+        <a href="mailto:chiruihuang079@gmail.com" style="color: #556B2F;">chiruihuang079@gmail.com</a>
+      </p>
+      <p style="color: #999; font-size: 14px; margin: 10px 0 0 0;">
+        Last updated: March 6, 2026
+      </p>
+    </div>
+  </article>
+</div>
+
+<style>
+  .article-content h2 {
+    font-family: 'Volkhov', serif;
+    border-bottom: 2px solid #D3D3B0;
+    padding-bottom: 10px;
+  }
+  
+  .article-content h3 {
+    font-family: 'Volkhov', serif;
+  }
+  
+  .article-content ul {
+    margin: 15px 0;
+  }
+  
+  .article-content li {
+    margin: 8px 0;
+  }
+  
+  .article-content a {
+    transition: opacity 0.3s;
+  }
+  
+  .article-content a:hover {
+    opacity: 0.7;
+  }
+</style>

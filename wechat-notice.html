@@ -1,0 +1,232 @@
+---
+layout: default
+title: "微信浏览器提示 - WeChat Browser Notice"
+---
+
+<style>
+  .wechat-notice-page {
+    max-width: 600px;
+    margin: 80px auto 40px;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .wechat-icon {
+    font-size: 72px;
+    margin-bottom: 20px;
+  }
+  
+  .wechat-notice-page h1 {
+    color: #07c160;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Volkhov', serif;
+  }
+  
+  .wechat-notice-page h2 {
+    color: #666;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+  
+  .instruction-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .instruction-card h3 {
+    color: #556B2F;
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .step-number {
+    background: #07c160;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+  
+  .step-text {
+    flex: 1;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .continue-btn {
+    display: inline-block;
+    background: #556B2F;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s;
+  }
+  
+  .continue-btn:hover {
+    background: #3d4d23;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 107, 47, 0.3);
+  }
+  
+  .lang-divider {
+    margin: 40px 0;
+    border-top: 2px solid #e0e0e0;
+  }
+  
+  .warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .warning-box strong {
+    color: #856404;
+  }
+  
+  @media (max-width: 600px) {
+    .wechat-notice-page {
+      margin: 40px auto 20px;
+      padding: 20px;
+    }
+    
+    .wechat-icon {
+      font-size: 56px;
+    }
+    
+    .wechat-notice-page h1 {
+      font-size: 24px;
+    }
+    
+    .wechat-notice-page h2 {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<div class="wechat-notice-page">
+  <!-- Icon -->
+  <div class="wechat-icon">📱</div>
+  
+  <!-- Chinese Section -->
+  <h1>欢迎！Welcome!</h1>
+  <h2>您正在使用微信浏览器访问本网站</h2>
+  
+  <div class="warning-box">
+    <strong>⚠️ 注意：</strong> 微信浏览器可能限制某些功能。为获得最佳体验，建议在外部浏览器中打开。
+  </div>
+  
+  <div class="instruction-card">
+    <h3>📖 如何在外部浏览器中打开</h3>
+    
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-text">点击右上角的"<strong>···</strong>"菜单按钮</div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-text">在弹出菜单中选择"<strong>在浏览器中打开</strong>"或"<strong>在 Safari 中打开</strong>"</div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-text">页面将在系统浏览器中重新打开，享受完整功能！</div>
+    </div>
+  </div>
+  
+  <a href="{{ '/' | relative_url }}" class="continue-btn">继续访问 / Continue Anyway</a>
+  
+  <!-- Divider -->
+  <div class="lang-divider"></div>
+  
+  <!-- English Section -->
+  <h2 style="margin-top: 40px;">You're viewing this site in WeChat's browser</h2>
+  
+  <div class="warning-box">
+    <strong>⚠️ Note:</strong> WeChat's in-app browser may restrict some features. For the best experience, we recommend opening in an external browser.
+  </div>
+  
+  <div class="instruction-card">
+    <h3>📖 How to Open in External Browser</h3>
+    
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-text">Tap the "<strong>···</strong>" menu button in the top-right corner</div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-text">Select "<strong>Open in Browser</strong>" or "<strong>Open in Safari</strong>" from the menu</div>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-text">The page will reopen in your system browser with full functionality!</div>
+    </div>
+  </div>
+  
+  <!-- Info Box -->
+  <div class="instruction-card" style="margin-top: 40px;">
+    <h3>ℹ️ Why This Matters / 为什么这很重要</h3>
+    <p style="color: #666; line-height: 1.8; margin: 0;">
+      <strong>中文：</strong> 微信浏览器对某些网页功能有限制，包括表单提交、外部链接和某些交互功能。在外部浏览器中打开可确保所有功能正常工作。
+    </p>
+    <hr style="margin: 15px 0; border: none; border-top: 1px solid #e0e0e0;">
+    <p style="color: #666; line-height: 1.8; margin: 0;">
+      <strong>English:</strong> WeChat's browser restricts certain web features including form submissions, external links, and some interactive elements. Opening in an external browser ensures all features work properly.
+    </p>
+  </div>
+  
+  <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+    <p style="margin: 0; color: #666; font-size: 14px;">
+      If you prefer to continue in WeChat, most features will still work, but you may experience some limitations.
+      <br><br>
+      如果您选择继续使用微信浏览器，大部分功能仍可正常使用，但可能有一些限制。
+    </p>
+  </div>
+</div>
+
+<script>
+  // Detect if actually in WeChat
+  if (!/MicroMessenger/i.test(navigator.userAgent)) {
+    // Not in WeChat, redirect to home
+    window.location.href = '{{ "/" | relative_url }}';
+  }
+  
+  // Auto-hide this page if already shown before
+  if (sessionStorage.getItem('wechat_landing_seen')) {
+    window.location.href = '{{ "/" | relative_url }}';
+  }
+  
+  // Mark as seen when they click continue
+  document.querySelector('.continue-btn').addEventListener('click', function() {
+    sessionStorage.setItem('wechat_landing_seen', 'true');
+  });
+</script>

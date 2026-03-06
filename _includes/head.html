@@ -20,24 +20,31 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
+  <!-- WeChat Compatibility -->
+  <meta name="applicable-device" content="mobile">
+  <meta name="mobile-agent" content="format=html5; url={{ page.url | prepend: site.url }}">
+  
   <!-- Security Headers -->
   <meta http-equiv='X-Content-Type-Options' content='nosniff'>
-  <meta http-equiv='X-Frame-Options' content='SAMEORIGIN'>
+  <!-- X-Frame-Options removed for WeChat compatibility - WeChat browser needs to embed pages -->
   <meta http-equiv='X-XSS-Protection' content='1; mode=block'>
   <meta name='referrer' content='strict-origin-when-cross-origin'>
-  <meta http-equiv='Permissions-Policy' content='geolocation=(), microphone=(), camera=()'>
-  <!-- Content Security Policy -->
-  <meta http-equiv='Content-Security-Policy' content="default-src 'self'; script-src 'self' 'unsafe-inline' translate.google.com translate-a.googleapis.com cdn.jsdelivr.net googletagmanager.com analytics.google.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://chirui-huang.pockethost.io; frame-src 'self' youtube.com www.youtube.com">
+  <meta http-equiv='Permissions-Policy' content='geolocation=(), microphone=(), camera=(), payment=(), usb=()'>
+  <meta http-equiv='Strict-Transport-Security' content='max-age=31536000; includeSubDomains'>
+  <!-- Content Security Policy - Enhanced for visitor protection, WeChat compatible -->
+  <meta http-equiv='Content-Security-Policy' content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' translate.google.com translate-a.googleapis.com cdn.jsdelivr.net googletagmanager.com analytics.google.com *.qq.com res.wx.qq.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com data:; img-src 'self' data: https: *.qq.com *.qpic.cn; connect-src 'self' https: wss: *.qq.com https://chirui-huang.pockethost.io translate.googleapis.com; frame-src 'self' youtube.com www.youtube.com *.youtube.com; frame-ancestors 'self' https://mp.weixin.qq.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name='description' content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <link rel='canonical' href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel='alternate' type='application/rss+xml' title='{{ site.title }}' href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-  <!-- Feather Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" crossorigin="anonymous">
+  <!-- Feather Icons - with integrity check for security -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" 
+          integrity="sha384-0bO+VLkf6GaGgFqsjF1qhNa+W8CIiNqRwAz4SjH+C0B5rH6lMvxPrXXqfgnPbDPu"
+          crossorigin="anonymous"></script>
 
   <style>
     {% capture include_to_scssify %}
