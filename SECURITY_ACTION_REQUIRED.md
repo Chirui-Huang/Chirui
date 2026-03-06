@@ -10,7 +10,7 @@
 2. **Website improvements:**
    - ✅ Donate section moved to bottom of all pages
    - ✅ Consistent styling across all pages (profile, research, podcasts, videos, tools)
-   - ✅ PayPal and Zelle buttons working with saygoodnight88@gmail.com
+   - ✅ PayPal donation info updated and working with chiruihuang079@gmail.com
    - ✅ README.md now displays properly on GitHub
 
 3. **Protected information:**
@@ -113,8 +113,7 @@ cat .gitignore | grep ADMIN
 ## Your Payment Info Status ✅
 
 Your donation info is **correctly public** (this is intentional):
-- PayPal: saygoodnight88@gmail.com ✅
-- Zelle: saygoodnight88@gmail.com ✅
+- PayPal: chiruihuang079@gmail.com ✅
 - GitHub README shows donate section ✅
 - All website pages show donate section ✅
 
@@ -133,7 +132,7 @@ Your donation info is **correctly public** (this is intentional):
 ## Questions?
 
 - **Q: Is my email exposed?**
-  A: Yes, intentionally. Contact emails (Fredykraft7@gmail.com) and payment emails (saygoodnight88@gmail.com) are meant to be public on personal websites.
+   A: Yes, intentionally. Contact emails (Fredykraft7@gmail.com) and payment emails (chiruihuang079@gmail.com) are meant to be public on personal websites.
 
 - **Q: Is my phone exposed?**
   A: Yes, on profile page (341-253-3352). This is normal for contact pages. Remove it from `profile.html` if you want it private.

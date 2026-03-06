@@ -127,9 +127,7 @@ bundle exec jekyll serve --port 4001 --config _config.yml,_config_dev.yml
 
 If you’d like to support my work, you can donate via:
 
-- PayPal: `saygoodnight88@gmail.com`
-- Zelle: `saygoodnight88@gmail.com`
-- GitHub: https://github.com/sponsors/fredykraft
+- PayPal: `chiruihuang079@gmail.com`
 
 ## Security Notes
 

@@ -60,7 +60,8 @@ var CookieManager = (function() {
    */
   function deleteCookie(name, path) {
     path = path || '/';
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + ';';
+    var secure = window.location.protocol === 'https:' ? '; secure' : '';
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + '; samesite=lax' + secure + ';';
   }
 
   /**

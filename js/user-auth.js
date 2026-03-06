@@ -120,6 +120,7 @@ class UserAuth {
     localStorage.removeItem('pb_auth_token');
     localStorage.removeItem('pb_current_user');
     sessionStorage.removeItem('pb_auth_token');
+    sessionStorage.removeItem('pb_current_user');
   }
 
   // ============================================
@@ -128,13 +129,11 @@ class UserAuth {
 
   setToken(token) {
     this.authToken = token;
-    localStorage.setItem('pb_auth_token', token);
     sessionStorage.setItem('pb_auth_token', token);
   }
 
   getStoredToken() {
-    return sessionStorage.getItem('pb_auth_token') || 
-           localStorage.getItem('pb_auth_token');
+    return sessionStorage.getItem('pb_auth_token');
   }
 
   isAuthenticated() {
@@ -147,11 +146,11 @@ class UserAuth {
 
   setUser(user) {
     this.currentUser = user;
-    localStorage.setItem('pb_current_user', JSON.stringify(user));
+    sessionStorage.setItem('pb_current_user', JSON.stringify(user));
   }
 
   getStoredUser() {
-    const stored = localStorage.getItem('pb_current_user');
+    const stored = sessionStorage.getItem('pb_current_user');
     return stored ? JSON.parse(stored) : null;
   }
 

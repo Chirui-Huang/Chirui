@@ -446,8 +446,17 @@ var ADMIN_PASSWORD_HASH = 'YOUR_BASE64_ENCODED_PASSWORD';
 var SESSION_KEY = 'admin_session';
 var SESSION_TIMEOUT = 3600000; // 1 hour in milliseconds
 
+function isPasswordHashConfigured() {
+  return ADMIN_PASSWORD_HASH && ADMIN_PASSWORD_HASH !== 'YOUR_BASE64_ENCODED_PASSWORD';
+}
+
 function handleLogin(event) {
   event.preventDefault();
+  if (!isPasswordHashConfigured()) {
+    document.getElementById('error-msg').style.display = 'block';
+    document.getElementById('error-msg').textContent = 'Admin password hash is not configured. Set ADMIN_PASSWORD_HASH locally before using this page.';
+    return;
+  }
   var password = document.getElementById('admin-password').value;
   
   // Check against pre-configured password
@@ -475,6 +484,12 @@ function showDashboard() {
 }
 
 function checkAuthentication() {
+  if (!isPasswordHashConfigured()) {
+    sessionStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem('login_time');
+    return;
+  }
+
   var isAuthenticated = sessionStorage.getItem(SESSION_KEY) === 'authenticated';
   var loginTime = parseInt(sessionStorage.getItem('login_time') || '0');
   var currentTime = new Date().getTime();

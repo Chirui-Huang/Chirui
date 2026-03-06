@@ -10,6 +10,8 @@ var ActivityTracker = (function() {
   var config = {
     cookiePrefix: 'visitor_',
     sessionDuration: 30, // minutes
+    visitorIdRetentionDays: 90,
+    analyticsRetentionDays: 30,
     enabled: false, // Wait for consent
     trackClicks: true,
     trackScroll: true,
@@ -83,20 +85,16 @@ var ActivityTracker = (function() {
     
     if (!visitorId) {
       visitorId = generateId();
-      CookieManager.set(config.cookiePrefix + 'id', visitorId, 730); // 2 years
+      CookieManager.set(config.cookiePrefix + 'id', visitorId, config.visitorIdRetentionDays);
       
-      // Store visitor info
+      // Store only minimal non-identifying visitor metadata
       var visitorData = {
         id: visitorId,
         firstVisit: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        language: navigator.language,
-        platform: navigator.platform,
-        screenResolution: window.screen.width + 'x' + window.screen.height,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        language: navigator.language || ''
       };
       
-      CookieManager.setJSON(config.cookiePrefix + 'info', visitorData, 730);
+      CookieManager.setJSON(config.cookiePrefix + 'info', visitorData, config.visitorIdRetentionDays);
     }
     
     state.visitorId = visitorId;
@@ -147,10 +145,10 @@ var ActivityTracker = (function() {
     state.lastActivityTime = state.pageLoadTime;
     
     var pageData = {
-      url: window.location.href,
+      url: getSanitizedUrl(window.location.href),
       path: window.location.pathname,
       title: document.title,
-      referrer: document.referrer,
+      referrer: getSanitizedReferrer(document.referrer),
       timestamp: new Date().toISOString(),
       sessionId: state.sessionId,
       visitorId: state.visitorId
@@ -167,7 +165,7 @@ var ActivityTracker = (function() {
       pageViews = pageViews.slice(-50);
     }
     
-    CookieManager.setJSON(config.cookiePrefix + 'page_views', pageViews, 30);
+    CookieManager.setJSON(config.cookiePrefix + 'page_views', pageViews, config.analyticsRetentionDays);
     
     // Track page view count for this specific page
     trackPageCounter(window.location.pathname);
@@ -179,7 +177,7 @@ var ActivityTracker = (function() {
   function trackPageCounter(pagePath) {
     var pageCounters = CookieManager.getJSON(config.cookiePrefix + 'page_counters') || {};
     pageCounters[pagePath] = (pageCounters[pagePath] || 0) + 1;
-    CookieManager.setJSON(config.cookiePrefix + 'page_counters', pageCounters, 365);
+    CookieManager.setJSON(config.cookiePrefix + 'page_counters', pageCounters, config.analyticsRetentionDays);
   }
 
   /**
@@ -222,10 +220,10 @@ var ActivityTracker = (function() {
     var clickData = {
       timestamp: new Date().toISOString(),
       element: target.tagName,
-      text: target.innerText ? target.innerText.substring(0, 50) : '',
+      text: target.innerText ? target.innerText.substring(0, 20) : '',
       id: target.id || '',
       className: target.className || '',
-      href: target.href || ''
+      href: target.href ? getSanitizedUrl(target.href) : ''
     };
 
     state.clicks.push(clickData);
@@ -296,7 +294,7 @@ var ActivityTracker = (function() {
     
     var pageActivity = {
       path: window.location.pathname,
-      url: window.location.href,
+      url: getSanitizedUrl(window.location.href),
       title: document.title,
       sessionId: state.sessionId,
       timeSpent: timeSpent,
@@ -315,7 +313,7 @@ var ActivityTracker = (function() {
       activities = activities.slice(-20);
     }
     
-    CookieManager.setJSON(config.cookiePrefix + 'activities', activities, 30);
+    CookieManager.setJSON(config.cookiePrefix + 'activities', activities, config.analyticsRetentionDays);
 
     // Update total time spent
     updateTotalTimeSpent(timeSpent);
@@ -327,7 +325,7 @@ var ActivityTracker = (function() {
   function updateTotalTimeSpent(timeSpent) {
     var totalTime = parseInt(CookieManager.get(config.cookiePrefix + 'total_time') || '0');
     totalTime += timeSpent;
-    CookieManager.set(config.cookiePrefix + 'total_time', totalTime.toString(), 365);
+    CookieManager.set(config.cookiePrefix + 'total_time', totalTime.toString(), config.analyticsRetentionDays);
   }
 
   /**
@@ -351,7 +349,7 @@ var ActivityTracker = (function() {
   function incrementVisitCount() {
     var visitCount = parseInt(CookieManager.get(config.cookiePrefix + 'visit_count') || '0');
     visitCount++;
-    CookieManager.set(config.cookiePrefix + 'visit_count', visitCount.toString(), 730);
+    CookieManager.set(config.cookiePrefix + 'visit_count', visitCount.toString(), config.visitorIdRetentionDays);
   }
 
   /**
@@ -376,7 +374,26 @@ var ActivityTracker = (function() {
       events = events.slice(-30);
     }
     
-    CookieManager.setJSON(config.cookiePrefix + 'custom_events', events, 30);
+    CookieManager.setJSON(config.cookiePrefix + 'custom_events', events, config.analyticsRetentionDays);
+  }
+
+  function getSanitizedUrl(rawUrl) {
+    try {
+      var url = new URL(rawUrl, window.location.origin);
+      return url.origin + url.pathname;
+    } catch (e) {
+      return window.location.origin + window.location.pathname;
+    }
+  }
+
+  function getSanitizedReferrer(rawReferrer) {
+    if (!rawReferrer) return '';
+    try {
+      var ref = new URL(rawReferrer);
+      return ref.origin + ref.pathname;
+    } catch (e) {
+      return '';
+    }
   }
 
   /**

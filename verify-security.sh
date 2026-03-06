@@ -38,20 +38,20 @@ check "✓ .gitignore file exists"
 grep -q "ADMIN_PASSWORD.md" .gitignore
 check "✓ ADMIN_PASSWORD.md protected in .gitignore"
 
-# Check no .env in repo
-! git ls-files | grep -q "\.env"
+# Check no real .env secrets in repo (allow .env.example)
+! (git ls-files | grep -E "^\.env($|\.)" | grep -v "^\.env\.example$" | grep -q .)
 check "✓ .env files not committed"
 
-# Check no exposed secrets in JS
-! grep -r "password\|api_key\|API_KEY" js/ --include="*.js" | grep -qv "//"
+# Check no hardcoded credential-like assignments in JS (exclude minified vendor bundles)
+! grep -RInE "(password|api[_-]?key|secret|token)\s*[:=]\s*['\"][^'\"]+['\"]" js/ --include="*.js" --exclude="*.min.js" >/dev/null
 check "✓ No hardcoded passwords in JavaScript"
 
 echo ""
 echo "🔐 Checking Configuration Security..."
 echo "======================================"
 
-# Check for localhost in JS files (excluding comments)
-! grep -r "localhost\|127\.0\.0\.1" js/ --include="*.js" | grep -qv "^[^:]*://[^/]*[[:space:]]*#"
+# Check for hardcoded localhost URL literals in JS files (allow comments/documentation)
+! grep -RInE "https?://(localhost|127\.0\.0\.1)(:[0-9]+)?" js/ --include="*.js" --exclude="*.min.js" >/dev/null
 check "✓ No localhost URLs in JavaScript files"
 
 # Check head.html has PocketBase configuration
@@ -121,8 +121,8 @@ check "✓ _config.yml exists"
 test -f _includes/head.html
 check "✓ _includes/head.html exists"
 
-# Verify auth files are not in git
-! git ls-files | grep -q "ADMIN_PASSWORD\.md$" && ! test -f ADMIN_PASSWORD.md
+# Verify sensitive admin credential file is not tracked in git (local private copy is allowed)
+! git ls-files | grep -q "ADMIN_PASSWORD\.md$"
 check "✓ Admin password not in repository"
 
 echo ""
@@ -171,7 +171,7 @@ else
     if ! grep -q "ADMIN_PASSWORD.md" .gitignore 2>/dev/null; then
         echo "  - ADMIN_PASSWORD.md not protected"
     fi
-    if grep -rq "password\|api_key" js/ --include="*.js" 2>/dev/null; then
+    if grep -RInE "(password|api[_-]?key|secret|token)\s*[:=]\s*['\"][^'\"]+['\"]" js/ --include="*.js" --exclude="*.min.js" >/dev/null 2>&1; then
         echo "  - Possible hardcoded credentials in JavaScript"
     fi
     echo ""
