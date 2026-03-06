@@ -59,7 +59,7 @@ gem install bundler
 
 **Step 2: Clone & Install**
 ```bash
-git clone https://github.com/fredykraft/Chirui.git
+git clone https://github.com/Chirui-Huang/Chirui.git
 cd Chirui
 bundle install
 ```
@@ -137,7 +137,7 @@ If you find this project helpful or inspiring, please consider supporting my wor
 ### Ways to Support
 
 #### 💜 GitHub Sponsors
-[**Become a Sponsor**](https://github.com/sponsors/fredykraft)
+[**Become a Sponsor**](https://github.com/sponsors/Chirui-Huang)
 - Monthly recurring support
 - Direct support from GitHub
 - Help me continue creating content
@@ -176,9 +176,9 @@ I'm always interested in working together!
 
 📱 **Connect:**
 - LinkedIn: [Chirui Huang](https://www.linkedin.com/in/chirui-h-595ba6270)
-- GitHub: [@fredykraft](https://github.com/fredykraft)
+- GitHub: [@Chirui-Huang](https://github.com/Chirui-Huang)
 - Website: [chirui.online](https://chirui.online)
-- YouTube: [FredyKraft](https://youtube.com/@FredyKraft)
+- YouTube: [Chirui-Huang](https://www.youtube.com/@Chirui-Huang)
 - Bilibili: [Chirui Huang](https://space.bilibili.com/3690992339258133)
 
 ---
@@ -201,9 +201,9 @@ Open source under the [MIT License](LICENSE)
 
 ### Made with ❤️ by [Chirui Huang](https://chirui.online)
 
-**[⭐ Star this repo if you find it helpful!](https://github.com/fredykraft/Chirui)**
+**[⭐ Star this repo if you find it helpful!](https://github.com/Chirui-Huang/Chirui)**
 
-**[💖 Support my work](https://github.com/sponsors/fredykraft)** | **[🌐 Visit Website](https://chirui.online)**
+**[💖 Support my work](https://github.com/sponsors/Chirui-Huang)** | **[🌐 Visit Website](https://chirui.online)**
 
 </div>
 
