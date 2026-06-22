@@ -26,33 +26,6 @@
     }
   }
 
-  .c-footer__donation {
-    margin-bottom: 20px;
-
-    .c-footer__donation-text {
-      color: #556B2F;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0 0 8px 0;
-      @include dark-mode {
-        background: linear-gradient(135deg, #8fd68f 0%, #a8e6a8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-    }
-
-    .c-footer__donation-info {
-      color: #666;
-      font-size: 14px;
-      font-weight: 500;
-      margin: 0;
-      @include dark-mode {
-        color: $dark-mode-text-secondary;
-      }
-    }
-  }
-
   .c-footer__copyright {
     padding-top: 20px;
     border-top: 1px solid #e0e0e0;
@@ -80,17 +53,6 @@
       padding: 30px 15px;
     }
 
-    .c-footer__donation {
-      .c-footer__donation-text {
-        font-size: 16px;
-      }
-
-      .c-footer__donation-info {
-        font-size: 13px;
-        word-break: break-word;
-      }
-    }
-
     .c-footer__copyright {
       p {
         font-size: 12px;
@@ -105,18 +67,6 @@
 
     .c-footer__content {
       padding: 25px 10px;
-    }
-
-    .c-footer__donation {
-      margin-bottom: 15px;
-
-      .c-footer__donation-text {
-        font-size: 15px;
-      }
-
-      .c-footer__donation-info {
-        font-size: 12px;
-      }
     }
   }
 }
